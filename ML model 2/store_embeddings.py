@@ -1,10 +1,13 @@
+import os
 from pymongo import MongoClient
 from sentence_transformers import SentenceTransformer
 import numpy as np
 import json
+from dotenv import load_dotenv
 
-# MongoDB connection string
-mongo_uri = "mongodb+srv://ashishkr01062003:VRGCpYP8csg8whOO@justifycluster.dscbfxc.mongodb.net/?appName=JustiFyCluster"
+# Load environment variables
+load_dotenv()
+mongo_uri = os.environ.get("MONGODB_URI")
 
 client = MongoClient(mongo_uri)
 
