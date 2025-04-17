@@ -2,7 +2,7 @@ import React from 'react'
 
 const FAQs = () => {
   return (
-    <section className="bg-gray-200 p-16">
+    <section id="faq-section" className="bg-gray-200 p-16">
       <h2 className="text-3xl font-bold text-center">Frequently Asked Questions</h2>
       <div className="mt-8 space-y-6">
         <div>
