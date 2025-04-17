@@ -2,8 +2,10 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white text-center py-4 mt-10">
-      <p>&copy; {new Date().getFullYear()} JustiFy. All rights reserved.</p>
+    <footer className="bg-gray-800 text-white py-4 mt-10">
+      <div className="container mx-auto text-center text-sm">
+        © {new Date().getFullYear()} JustiFy. All rights reserved.
+      </div>
     </footer>
   )
 }

@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const LanguageToggle = () => {
+  const [lang, setLang] = useState('en')
+
+  const toggleLang = () => {
+    setLang(prev => (prev === 'en' ? 'hi' : 'en'))
+  }
+
   return (
-    <div className="flex justify-end px-6 py-2">
-      <button className="mx-2">EN</button>
-      <button className="mx-2">हिंदी</button>
-    </div>
+    <button onClick={toggleLang} className="bg-gray-200 px-4 py-1 rounded">
+      {lang === 'en' ? 'Switch to Hindi' : 'Switch to English'}
+    </button>
   )
 }
 

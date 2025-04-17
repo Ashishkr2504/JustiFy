@@ -2,15 +2,15 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <section className="p-8">
-      <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
-      <form className="flex flex-col gap-4 max-w-md mx-auto">
-        <input type="text" placeholder="Name" className="p-2 border" />
-        <input type="email" placeholder="Email" className="p-2 border" />
-        <textarea placeholder="Message" className="p-2 border" />
-        <button type="submit" className="bg-blue-500 text-white py-2 rounded">Send</button>
+    <div className="max-w-xl mx-auto p-8">
+      <h1 className="text-2xl font-bold mb-4">Contact Us</h1>
+      <form className="space-y-4">
+        <input type="text" placeholder="Name" className="w-full border p-2 rounded" />
+        <input type="email" placeholder="Email" className="w-full border p-2 rounded" />
+        <textarea placeholder="Message" className="w-full border p-2 rounded h-32" />
+        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Send</button>
       </form>
-    </section>
+    </div>
   )
 }
 

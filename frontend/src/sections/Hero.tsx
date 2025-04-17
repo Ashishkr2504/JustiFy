@@ -2,9 +2,9 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <section className="bg-yellow-100 text-center py-20">
-      <h1 className="text-4xl font-bold mb-4">Welcome to JustiFy</h1>
-      <p className="text-lg">Your AI-powered legal assistant.</p>
+    <section className="bg-blue-500 text-white p-20 text-center">
+      <h1 className="text-4xl font-bold">Welcome to JustiFy</h1>
+      <p className="text-xl mt-4">Your legal aid platform for easy access to legal information and services.</p>
     </section>
   )
 }
