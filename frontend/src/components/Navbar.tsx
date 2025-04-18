@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { LogIn, UserPlus } from 'lucide-react';
 import icon from '../assets/icon_3.jpg';
 import '@fontsource/playfair-display/400.css' // Regular weight
@@ -7,6 +9,7 @@ import '@fontsource/playfair-display/700.css'
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleScrollToTop = (e: React.MouseEvent) => {
     if (location.pathname === '/') {
@@ -15,21 +18,31 @@ const Navbar = () => {
     }
   };
 
+  
   const handleScrollToFAQ = (e: React.MouseEvent) => {
     e.preventDefault();
-    const faqSection = document.getElementById('faq-section');
-    if (faqSection) {
-      faqSection.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname === '/') {
+      const faqSection = document.getElementById('faq-section');
+      if (faqSection) {
+        faqSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/?scrollTo=faq');
     }
   };
-
-  const handleScrollToSection = (e: React.MouseEvent, sectionId: string) => {
-    e.preventDefault();
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+   // Scroll when redirected from another route
+   useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const scrollTo = params.get('scrollTo');
+    if (scrollTo === 'faq') {
+      const faqSection = document.getElementById('faq-section');
+      if (faqSection) {
+        setTimeout(() => {
+          faqSection.scrollIntoView({ behavior: 'smooth' });
+        }, 300); // slight delay for page render
+      }
     }
-  };
+  }, [location]);
 
   return (
     <nav style={{ backgroundColor: '#2E2E2E' }} className="text-white py-3 px-6 shadow-md fixed top-0 left-0 w-full z-50">
@@ -71,13 +84,7 @@ const Navbar = () => {
   >
     Contact Us
   </Link>
-  <a
-    href="#about-us-section"
-    onClick={(e) => handleScrollToSection(e, 'about-us-section')}
-    className="hover:text-[#D97706] transition-colors duration-200"
-  >
-    About Us
-  </a>
+ 
 </div>
 
         {/* Login / Register Buttons */}

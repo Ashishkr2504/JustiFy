@@ -3,7 +3,7 @@ import Hero from '../sections/Hero'
 import HowItWorks from '../sections/HowItWorks'
 import WhyChooseUs from '../sections/WhyChooseUs'
 import FAQs from '../sections/FAQs'
-import AboutUs from '../sections/AboutUs'
+
 
 const Home = () => {
   return (
@@ -12,7 +12,6 @@ const Home = () => {
       <HowItWorks />
       <WhyChooseUs />
       <FAQs />
-      <AboutUs />
     </div>
   )
 }
