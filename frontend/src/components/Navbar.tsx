@@ -43,6 +43,7 @@ const Navbar = () => {
       }
     }
   }, [location]);
+  
 
   return (
     <nav style={{ backgroundColor: '#2E2E2E' }} className="text-white py-3 px-6 shadow-md fixed top-0 left-0 w-full z-50">
