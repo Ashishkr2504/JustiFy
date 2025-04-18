@@ -22,6 +22,9 @@ app.use('/api/contact', contactRoutes);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
+app.get('/', (req, res) => {
+  res.send('Home page');  
+})
 
 connectDB().then(() => {
   app.listen(PORT, () => {

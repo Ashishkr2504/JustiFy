@@ -1,8 +1,9 @@
 import { Router } from 'express';
-import { contactForm } from '../controllers/contact.controller';
+import { sendContactMessage } from '../controllers/contact.controller';
 
 const router = Router();
 
-router.post('/', contactForm);
+// @ts-ignore
+router.post('/send', sendContactMessage);
 
 export default router;

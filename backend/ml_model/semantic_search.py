@@ -91,7 +91,7 @@ if __name__ == "__main__":
     print("\n📄 Top Results:")
     for i, doc in enumerate(results, 1):
         print(f"\nResult {i}:")
-        print(f"Source: {doc['source']}")
+        # print(f"Source: {doc['source']}")
         print(f"Text: {doc['text'][:500]}...")
 
     combined_context = " ".join([doc['text'] for doc in results])
