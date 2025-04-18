@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { LogIn, UserPlus } from 'lucide-react';
 import icon from '../assets/icon_3.jpg';
+import '@fontsource/playfair-display/400.css' // Regular weight
+import '@fontsource/playfair-display/700.css' 
 
 const Navbar = () => {
   const location = useLocation();
@@ -35,7 +37,9 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="text-xl font-bold flex items-center space-x-2" onClick={handleScrollToTop}>
           <img src={icon} alt="Logo" className="h-10 w-10 rounded-full" />
-          <span style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 700, fontSize: '1.7rem' }}>JustiFy</span>
+          <h5 className="text-4xl font-extrabold  tracking-wide text-white" style={{ fontFamily: '"Playfair Display", serif' }}>
+          JustiFy
+        </h5>
         </Link>
 
         {/* Center Navigation */}
