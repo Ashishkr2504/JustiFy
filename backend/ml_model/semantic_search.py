@@ -14,7 +14,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 # Load environment variables
 load_dotenv()
 mongo_uri = os.environ.get("MONGODB_URI")
-genai.configure(api_key="AIzaSyDvH_zyaHMtJYU6gf3qBmfkUTE2UdTFdx0")
+genai.configure(api_key=os.environ.get("gemapi"))
 
 # Load embedding model for semantic search
 embedding_model = SentenceTransformer("BAAI/bge-small-en")
