@@ -1,4 +1,6 @@
 import os
+import sys
+import io
 import numpy as np
 from pymongo import MongoClient
 from dotenv import load_dotenv
@@ -7,6 +9,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 import google.generativeai as genai
 import certifi
 
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 # Load environment variables
 load_dotenv()
 mongo_uri = os.environ.get("MONGODB_URI")
@@ -74,7 +78,12 @@ def calculate_confidence_score(query, answer):
 
 # Main program
 if __name__ == "__main__":
-    query = input("🔍 Enter your legal question: ")
+    if len(sys.argv) < 2:
+        print("No query provided. Please pass a query as a command-line argument.")
+        sys.exit(1)
+
+    # Get the query from the command-line argument
+    query = sys.argv[1]
 
     rephrased_query = f"Please explain the legal process regarding: {query}"
     results= semantic_search(rephrased_query)
