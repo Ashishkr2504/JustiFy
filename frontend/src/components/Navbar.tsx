@@ -39,13 +39,42 @@ const Navbar = () => {
         </Link>
 
         {/* Center Navigation */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-6">
-          <Link to="/" onClick={handleScrollToTop}>Home</Link>
-          <Link to="/blog">Blog</Link>
-          <a href="#faq-section" onClick={handleScrollToFAQ}>FAQ</a>
-          <Link to="/contact">Contact Us</Link>
-          <a href="#about-us-section" onClick={(e) => handleScrollToSection(e, 'about-us-section')}>About Us</a>
-        </div>
+       {/* Center Navigation */}
+<div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-6">
+  <Link
+    to="/"
+    onClick={handleScrollToTop}
+    className="hover:text-[#D97706] transition-colors duration-200"
+  >
+    Home
+  </Link>
+  <Link
+    to="/blog"
+    className="hover:text-[#D97706] transition-colors duration-200"
+  >
+    Blog
+  </Link>
+  <a
+    href="#faq-section"
+    onClick={handleScrollToFAQ}
+    className="hover:text-[#D97706] transition-colors duration-200"
+  >
+    FAQ
+  </a>
+  <Link
+    to="/contact"
+    className="hover:text-[#D97706] transition-colors duration-200"
+  >
+    Contact Us
+  </Link>
+  <a
+    href="#about-us-section"
+    onClick={(e) => handleScrollToSection(e, 'about-us-section')}
+    className="hover:text-[#D97706] transition-colors duration-200"
+  >
+    About Us
+  </a>
+</div>
 
         {/* Login / Register Buttons */}
         <div className="flex items-center gap-3">
