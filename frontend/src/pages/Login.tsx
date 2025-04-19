@@ -6,11 +6,13 @@ import '@fontsource/playfair-display/400.css';
 import '@fontsource/playfair-display/700.css';
 import Lottie from 'lottie-react'
 import loginanimation from '../assets/login_img.json'
+import { useAuth } from '../context/AuthContext'; // Import the Auth context
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
+  const { login } = useAuth(); // Use the Auth context
 
   // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,14 +32,15 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post<{ token: string }>('http://localhost:5000/api/auth/login', {
         email: formData.email.trim(),
         password: formData.password.trim(),
       });
 
       if (response.status === 200) {
         // If login is successful, you can store the JWT (if needed)
-        // localStorage.setItem('token', response.data.token);
+        localStorage.setItem('token', response.data.token);
+        login(); // Update the global authentication state
         navigate('/dashboard');
       }
     } catch (error: any) {

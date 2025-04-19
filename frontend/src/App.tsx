@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
@@ -11,6 +11,15 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './utils/ScrollToTop' // ✅ Import the ScrollToTop component
 import './index.css'
+declare namespace JSX {
+  interface Element extends React.ReactElement<any, any> {}
+}
+
+
+const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
+  const token = localStorage.getItem('token');
+  return token ? children : <Navigate to="/login" />;
+};
 
 const App = () => {
   return (
@@ -25,7 +34,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/dashboard/*" element={<Dashboard />} />
+            <Route path="/dashboard/*" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
           </Routes>
         </main>
