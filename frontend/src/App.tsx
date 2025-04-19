@@ -6,6 +6,7 @@ import Contact from './pages/Contact'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
+import ResetPassword from './pages/ResetPassword'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './utils/ScrollToTop' // ✅ Import the ScrollToTop component
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard/*" element={<Dashboard />} />
+            <Route path="/reset-password/:token" element={<ResetPassword />} />
           </Routes>
         </main>
         <Footer />

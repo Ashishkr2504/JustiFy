@@ -1,4 +1,3 @@
-
 import mongoose, { Document, Schema } from 'mongoose';
 import bcrypt from 'bcrypt';
 
@@ -8,36 +7,28 @@ interface IUser extends Document {
   email: string;
   password: string;
   role: 'user' | 'admin';
+  resetPasswordToken?: string;
+  resetPasswordExpires?: Date;
 }
 
 // Create a Schema for User
 const userSchema = new Schema<IUser>({
-  name: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-  role: {
-    type: String,
-    enum: ['user', 'admin'],
-    default: 'user',
-  },
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  role: { type: String, enum: ['user', 'admin'], default: 'user' },
+  resetPasswordToken: { type: String },
+  resetPasswordExpires: { type: Date },
 });
 
 // Password hashing middleware
-userSchema.pre('save', async function (next) {
+userSchema.pre<IUser>('save', async function (next) {
+  const user = this; // 'this' is now correctly typed as 'IUser'
+  
   // If the password is not modified, skip the hashing process
-  if (!this.isModified('password')) return next();
+  if (!user.isModified('password')) return next();
  
-  this.password = await bcrypt.hash(this.password, 10);
+  user.password = await bcrypt.hash(user.password, 10);
 
   next();
 });
@@ -46,8 +37,6 @@ userSchema.pre('save', async function (next) {
 interface IUserMethods {
   isPasswordCorrect(password: string): Promise<boolean>;
 }
-
-
 
 // Create the User model based on the schema
 const User = mongoose.model<IUser>('User', userSchema);

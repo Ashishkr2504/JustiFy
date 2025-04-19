@@ -52,14 +52,27 @@ const Login = () => {
   };
 
   // Handle forgot password click
-  const handleForgotPassword = () => {
+  const handleForgotPassword = async () => {
     if (!formData.email) {
       setErrorMessage('Please enter your email to reset your password.');
       return;
     }
-    
-    // Placeholder alert for password reset (replace with real API if implemented)
-    alert(`A password reset link has been sent to ${formData.email}`);
+
+    try {
+      const response = await axios.post('http://localhost:5000/api/auth/forgot-password', {
+        email: formData.email.trim(),
+      });
+
+      if (response.status === 200) {
+        alert('A password reset link has been sent to your email.');
+      }
+    } catch (error: any) {
+      if (error.response?.data?.message) {
+        setErrorMessage(error.response.data.message);
+      } else {
+        setErrorMessage('Something went wrong. Please try again later.');
+      }
+    }
   };
 
   return (
@@ -127,11 +140,11 @@ const Login = () => {
 
             {/* Login Button */}
             <button
-              type="submit"
-              className="w-full bg-[#D97706] text-white py-2 rounded-md hover:bg-[#b45309] transition cursor-pointer"
-            >
-              Log In
-            </button>
+            type="submit"
+            className="w-full bg-gradient-to-r from-[#D97706] to-[#F59E0B] text-white py-2 rounded-md hover:shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            Log In
+          </button>
           </form>
 
           {/* Register Link */}
