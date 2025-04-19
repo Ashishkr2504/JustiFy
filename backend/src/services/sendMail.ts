@@ -1,21 +1,24 @@
+// utils/sendMail.ts
 import nodemailer from 'nodemailer';
+
+// ✅ Define a clear custom type
+type SendMailParams = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 export const sendMail = async ({
   name,
   email,
   subject,
   message,
-}: {
-  name: string;
-  email: string;
-  subject: string;  
-  message: string;
-}) => {
-  console.log('Email User:', process.env.ADMIN_EMAIL);
-  console.log('Email Pass:', process.env.ADMIN_PASSWORD);
-
+}: SendMailParams) => {
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.ADMIN_EMAIL,
       pass: process.env.ADMIN_PASSWORD,
