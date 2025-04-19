@@ -62,11 +62,14 @@ const RegistrationPage = () => {
       }
 
       // Make API call to backend
-      const response = await axios.post<RegisterResponse>('http://localhost:5000/api/register', {
-        name: `${formData.firstName} ${formData.lastName}`, // Combine first and last name
-        email: formData.email,
-        password: formData.password,
-      });
+     // Frontend
+const response = await axios.post<RegisterResponse>('http://localhost:5000/api/auth/register', {
+  firstName: formData.firstName,
+  lastName: formData.lastName,
+  email: formData.email,
+  password: formData.password,
+});
+
 
       // Handle successful registration
       setSuccessMessage(response.data.message); // TypeScript now knows 'message' exists
