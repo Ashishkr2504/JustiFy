@@ -28,6 +28,7 @@ const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
   return token ? children : <Navigate to="/login" />;
 };
 
+
 const DashboardLayout = () => (
   <>
     <Dashboard />
