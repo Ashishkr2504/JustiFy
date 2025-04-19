@@ -30,6 +30,7 @@ const ResetPassword = () => {
         setTimeout(() => navigate('/login'), 3000);
       }
     } catch (error: any) {
+      // console.log(error);
       if (error.response?.data?.message) {
         setErrorMessage(error.response.data.message);
       } else {

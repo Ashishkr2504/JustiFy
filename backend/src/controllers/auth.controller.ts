@@ -3,7 +3,7 @@ import User from '../models/user.model';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
-import { sendMail } from '../utils/sendMail'; // Utility to send emails
+import { sendResetMail } from '../utils/sendResetMail'; // Utility to send emails
 
 // User Registration
 export const registerUser = async (req: Request, res: Response) => {
@@ -112,7 +112,7 @@ export const forgotPassword = async (req: Request, res: Response) => {
       <a href="${resetUrl}" target="_blank">${resetUrl}</a>
     `;
 
-    await sendMail({
+    await sendResetMail({
       name: user.name,
       email: user.email,
       subject: 'Password Reset Request',
@@ -145,10 +145,10 @@ export const resetPassword = async (req: Request, res: Response) => {
     }
 
     // Hash the new password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // const hashedPassword = await bcrypt.hash(password, 10);
 
     // Update the user's password and clear the reset token fields
-    user.password = hashedPassword;
+    user.password = password; // Use the plain password for now
     user.resetPasswordToken = undefined;
     user.resetPasswordExpires = undefined;
     await user.save();
