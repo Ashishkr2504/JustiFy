@@ -2,7 +2,7 @@
 /* Add this to your Tailwind CSS or global styles */
 /* Background Animation */
 /* Background Gradient Animation */
-@keyframes gradientShift {
+/* @keyframes gradientShift {
     0% {
       background-position: 400% 400%;
     }
@@ -21,7 +21,7 @@
   }
   
   /* Swinging Scale Animation */
-  @keyframes swingBalance {
+  /* @keyframes swingBalance {
     0% {
       transform: rotate(0deg);
     }
@@ -35,6 +35,6 @@
   
   .animate-swing-balance {
     animation: swingBalance 4s ease-in-out infinite;
-  }
-  
+  } */
+   */
  

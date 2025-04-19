@@ -1,11 +1,16 @@
-import React from 'react'
+import { motion } from 'framer-motion'
 
 const Chatbot = () => {
   return (
-    <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
-      <h2 className="text-xl font-bold">Chatbot</h2>
-      <p className="text-gray-700 mt-2">Interactive chatbot for legal inquiries.</p>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      <h2 className="text-2xl font-bold mb-4">AI Legal Chatbot</h2>
+      {/* your content */}
+    </motion.div>
   )
 }
 

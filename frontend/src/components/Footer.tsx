@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone } from 'lucide-react';
-
+import logo from '../assets/icon_3.jpg';
 const Footer = () => {
   return (
     <footer className="bg-[#2E2E2E] text-[#FFFAF0] py-12 px-6">
@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col">
           <div className="flex items-center mb-4">
             {/* Replace with your actual logo */}
-            <img src="src/assets/icon_3.jpg" alt="JustiFy Logo" className="h-10 w-10 mr-2" />
+            <img src={logo} alt="JustiFy Logo" className="h-10 w-10 mr-2" />
             <h3 className="text-2xl font-bold text-white">JustiFy</h3>
           </div>
           <p className="text-sm text-[#FFFAF0]/80 leading-relaxed">
