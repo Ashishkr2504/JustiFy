@@ -23,10 +23,11 @@ export const registerUser = async (req: Request, res: Response) => {
     const name = `${firstName} ${lastName}`;
 
     // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // const hashedPassword = await bcrypt.hash(password, 10).then((hash) => hash);
+    // console.log('Hashed password:', hashedPassword); // Log the hashed password
 
     // Create a new user
-    const user = new User({ name, email, password: hashedPassword });
+    const user = new User({ name, email, password: password});
     await user.save();
 
     // Respond with a success message
@@ -38,30 +39,30 @@ export const registerUser = async (req: Request, res: Response) => {
 };
 
 // User Login
-export const loginUser = async (req: Request, res: Response) => {
+export const loginUser = async (req: Request, res: Response): Promise<void> => {
   const { email, password } = req.body;
 
   try {
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json({ message: 'Invalid credentials' });
+      res.status(404).json({ message: 'User does not exist' });
+      return;
     }
 
-    // Compare passwords
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(400).json({ message: 'Invalid credentials' });
+      res.status(401).json({ message: 'Incorrect password' });
+      return;
     }
 
-    // Generate JWT Token
-    const token = jwt.sign(
-      { id: user._id, role: user.role },
-      process.env.JWT_SECRET!,
-      { expiresIn: '1h' }
-    );
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET as string, {
+      expiresIn: '7d',
+    });
 
+    // Respond with a success message and the token
     res.status(200).json({ message: 'Login successful', token });
   } catch (error) {
+    console.error('Error during login:', error);
     res.status(500).json({ message: 'Error logging in', error });
   }
 };

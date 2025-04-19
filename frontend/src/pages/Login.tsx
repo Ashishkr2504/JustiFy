@@ -1,81 +1,91 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion'; // Import framer-motion
-import '@fontsource/playfair-display/400.css'
-import '@fontsource/playfair-display/700.css'
+import { motion } from 'framer-motion';
+import axios from 'axios'; // ✅ Import axios
+import '@fontsource/playfair-display/400.css';
+import '@fontsource/playfair-display/700.css';
+import Lottie from 'lottie-react'
+import loginanimation from '../assets/login_img.json'
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
-  const registeredUsers = [
-    { email: 'user1@example.com', password: 'Password@123' },
-    { email: 'user2@example.com', password: 'Password@456' },
-  ]; // Simulated registered users
-
+  // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    setErrorMessage('');
+    setErrorMessage(''); // Clear error message on input change
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Handle form submission (login)
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const user = registeredUsers.find((u) => u.email === formData.email);
-
-    if (!user) {
-      setErrorMessage('User does not exist.');
+    // Check if any field is empty
+    if (!formData.email || !formData.password) {
+      setErrorMessage('All fields are required.');
       return;
     }
 
-    if (user.password !== formData.password) {
-      setErrorMessage('Incorrect password.');
-      return;
-    }
+    try {
+      const response = await axios.post('http://localhost:5000/api/auth/login', {
+        email: formData.email.trim(),
+        password: formData.password.trim(),
+      });
 
-    navigate('/dashboard'); // Redirect to dashboard on successful login
+      if (response.status === 200) {
+        // If login is successful, you can store the JWT (if needed)
+        // localStorage.setItem('token', response.data.token);
+        navigate('/dashboard');
+      }
+    } catch (error: any) {
+      if (error.response?.data?.message) {
+        // Display backend error message (e.g., incorrect password)
+        setErrorMessage(error.response.data.message);
+      } else {
+        // Generic error message
+        setErrorMessage('Something went wrong. Please try again later.');
+      }
+    }
   };
 
+  // Handle forgot password click
   const handleForgotPassword = () => {
     if (!formData.email) {
       setErrorMessage('Please enter your email to reset your password.');
       return;
     }
-
-    // Simulate sending a reset link
+    
+    // Placeholder alert for password reset (replace with real API if implemented)
     alert(`A password reset link has been sent to ${formData.email}`);
   };
 
   return (
     <section className="flex min-h-screen bg-[#D6BFAA]">
-      {/* Left Side for Image */}
+      {/* Left Side Image */}
       <div className="hidden md:flex w-1/2 items-center justify-center">
-        <img
-          src="/images/login-illustration.png"
-          alt="Login Illustration"
-          className="max-w-md w-full object-contain"
-        />
+      <Lottie animationData={loginanimation} loop={true}/>
       </div>
+
 
       {/* Right Side Card */}
       <div className="w-full md:w-1/2 flex items-center justify-center px-6">
         <motion.div
-          initial={{ opacity: 0, y: 50 }} // Initial animation state
-          animate={{ opacity: 1, y: 0 }} // Final animation state
-          transition={{ duration: 0.6 }} // Duration of the animation
-          className="w-full max-w-md bg-white rounded-xl shadow-lg p-8 "
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="w-full max-w-md bg-white rounded-xl shadow-lg p-8"
         >
-              <h1 className="text-4xl font-extrabold mb-6  text-center tracking-wide text-[#2E2E2E]" style={{ fontFamily: '"Playfair Display", serif' }}>
-          Welcome Back
-        </h1>
+          <h1 className="text-4xl font-extrabold mb-6 text-center tracking-wide text-[#2E2E2E]" style={{ fontFamily: '"Playfair Display", serif' }}>
+            Welcome Back
+          </h1>
+
           <form className="space-y-4" onSubmit={handleSubmit}>
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium text-[#14532D]">
-                Email
-              </label>
+              <label className="block text-sm font-medium text-[#14532D]">Email</label>
               <input
                 type="email"
                 name="email"
@@ -88,9 +98,7 @@ const Login = () => {
 
             {/* Password */}
             <div>
-              <label className="block text-sm font-medium text-[#14532D]">
-                Password
-              </label>
+              <label className="block text-sm font-medium text-[#14532D]">Password</label>
               <input
                 type="password"
                 name="password"
@@ -106,7 +114,7 @@ const Login = () => {
               <p className="text-red-500 text-sm text-center">{errorMessage}</p>
             )}
 
-            {/* Forgot Password */}
+            {/* Forgot Password Link */}
             <div className="text-right">
               <button
                 type="button"
@@ -129,10 +137,7 @@ const Login = () => {
           {/* Register Link */}
           <p className="text-center text-sm text-[#2E2E2E] mt-4">
             Don't have an account?{' '}
-            <a
-              href="/register"
-              className="text-[#D97706] hover:underline"
-            >
+            <a href="/register" className="text-[#D97706] hover:underline">
               Register
             </a>
           </p>

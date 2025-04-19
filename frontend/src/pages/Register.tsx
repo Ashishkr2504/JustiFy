@@ -62,13 +62,13 @@ const RegistrationPage = () => {
       }
 
       // Make API call to backend
-     // Frontend
-const response = await axios.post<RegisterResponse>('http://localhost:5000/api/auth/register', {
-  firstName: formData.firstName,
-  lastName: formData.lastName,
-  email: formData.email,
-  password: formData.password,
-});
+      // Frontend
+      const response = await axios.post<RegisterResponse>('http://localhost:5000/api/auth/register', {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        password: formData.password,
+      });
 
 
       // Handle successful registration
@@ -94,10 +94,12 @@ const response = await axios.post<RegisterResponse>('http://localhost:5000/api/a
     <section className="flex min-h-screen bg-[#FFFAF0]">
       {/* Left Side Illustration */}
       <div className="w-1/2 hidden md:flex items-center justify-center bg-[#FFFAF0]">
-        <img
-          src="/images/register-illustration.png"
-          alt="Registration Illustration"
-          className="max-w-md w-full object-contain"
+        <video
+          src="/src/assets/lateruse.mp4" // Path to your video file
+          autoPlay
+          loop
+          muted
+          className="w-[500px] h-[500px] object-cover"
         />
       </div>
 
@@ -109,9 +111,9 @@ const response = await axios.post<RegisterResponse>('http://localhost:5000/api/a
           transition={{ duration: 0.6 }}
           className="w-full max-w-md bg-white rounded-xl shadow-lg p-8"
         >
-           <h1 className="text-4xl font-extrabold mb-6  text-center tracking-wide text-[#2E2E2E]" style={{ fontFamily: '"Playfair Display", serif' }}>
-          Welcome 
-        </h1>
+          <h1 className="text-4xl font-extrabold mb-6  text-center tracking-wide text-[#2E2E2E]" style={{ fontFamily: '"Playfair Display", serif' }}>
+            Welcome
+          </h1>
 
           <form className="space-y-4" onSubmit={handleSubmit} >
             {/* First Name */}
@@ -125,7 +127,7 @@ const response = await axios.post<RegisterResponse>('http://localhost:5000/api/a
                 value={formData.firstName}
                 onChange={handleInputChange}
                 className="mt-1 w-full px-4 py-2 border border-[#14532D]/40 rounded-md focus:outline-none focus:ring-2 focus:ring-[#14532D]"
-                 placeholder="Enter your First Name"
+                placeholder="Enter your First Name"
               />
             </div>
 
@@ -156,7 +158,7 @@ const response = await axios.post<RegisterResponse>('http://localhost:5000/api/a
                 onChange={handleInputChange}
                 className="mt-1 w-full px-4 py-2 border border-[#14532D]/40 rounded-md focus:outline-none focus:ring-2 focus:ring-[#14532D]"
                 placeholder="Enter your email"
-               
+
               />
             </div>
 
@@ -209,8 +211,8 @@ const response = await axios.post<RegisterResponse>('http://localhost:5000/api/a
   );
 };
 
-    // ⏩ Keep your existing JSX as-is
-    // No changes needed in the JSX portion
-  
+// ⏩ Keep your existing JSX as-is
+// No changes needed in the JSX portion
+
 
 export default RegistrationPage;
