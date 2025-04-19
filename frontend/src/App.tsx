@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-=======
-// This is the main entry point of the React application. 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
->>>>>>> Stashed changes
 import Home from './pages/Home'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
@@ -22,7 +17,6 @@ import CaseTracker from './dashboard/CaseTracker'
 import LocationServices from './dashboard/LocationServices'
 import ScrollToTop from './utils/ScrollToTop' // ✅ Import the ScrollToTop component
 import './index.css'
-<<<<<<< Updated upstream
 declare namespace JSX {
   interface Element extends React.ReactElement<any, any> {}
 }
@@ -32,9 +26,7 @@ const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
   const token = localStorage.getItem('token');
   return token ? children : <Navigate to="/login" />;
 };
-=======
 import { Outlet } from 'react-router-dom'
->>>>>>> Stashed changes
 
 const DashboardLayout = () => (
   <>
@@ -57,13 +49,10 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-<<<<<<< Updated upstream
-            <Route path="/dashboard/*" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-=======
+            {/* <Route path="/dashboard/*" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} /> */}
             {/* <Route path="/dashboard/*" element={<Dashboard />} /> */}
->>>>>>> Stashed changes
             <Route path="/reset-password/:token" element={<ResetPassword />} />
-            <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
               <Route path="chatbot" element={<Chatbot />} />
               <Route path="templates" element={<LegalTemplates />} />
               <Route path="analyzer" element={<DocumentAnalyzer />} />
