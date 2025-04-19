@@ -4,15 +4,17 @@ interface MailOptions {
   name: string;
   email: string;
   subject: string;
-  description: string;
+  message: string;
 }
 
-export const sendMail = async ({ name, email, subject, description }: MailOptions) => {
+export const sendMail = async ({ name, email, subject, message }: MailOptions) => {
+  console.log('Sending email...'); // Log the email sending process
+
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: process.env.ADMIN_EMAIL,
-      pass: process.env.ADMIN_EMAIL_PASS,
+      pass: process.env.ADMIN_PASSWORD,
     },
   });
 
@@ -24,7 +26,7 @@ export const sendMail = async ({ name, email, subject, description }: MailOption
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Subject:</strong> ${subject}</p>
-      <p><strong>Message:</strong><br/>${description}</p>
+      <p><strong>Message:</strong><br/>${message}</p>
     `,
   };
 
