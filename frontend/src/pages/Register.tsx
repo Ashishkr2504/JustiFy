@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // 👈 add this
 import { motion } from 'framer-motion';
+import axios from 'axios'; // Import axios for API calls
 import '@fontsource/playfair-display/400.css'
 import '@fontsource/playfair-display/700.css'
+
+interface RegisterResponse {
+  message: string; // Adjust this based on your backend response structure
+}
 
 const RegistrationPage = () => {
   const navigate = useNavigate(); // 👈 initialize navigate
@@ -45,23 +50,41 @@ const RegistrationPage = () => {
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!validateForm()) return;
 
-    if (registeredUsers.includes(formData.email)) {
-      setErrorMessage('User is already registered.');
-      return;
+    try {
+      // Define the expected response type
+      interface RegisterResponse {
+        message: string;
+      }
+
+      // Make API call to backend
+      const response = await axios.post<RegisterResponse>('http://localhost:5000/api/register', {
+        name: `${formData.firstName} ${formData.lastName}`, // Combine first and last name
+        email: formData.email,
+        password: formData.password,
+      });
+
+      // Handle successful registration
+      setSuccessMessage(response.data.message); // TypeScript now knows 'message' exists
+      setErrorMessage('');
+      setTimeout(() => {
+        navigate('/dashboard'); // Redirect to dashboard
+      }, 1000);
+
+      // Clear form data
+      setFormData({ firstName: '', lastName: '', email: '', password: '' });
+    } catch (error: any) {
+      // Handle errors from the backend
+      if (error.response && error.response.data.message) {
+        setErrorMessage(error.response.data.message);
+      } else {
+        setErrorMessage('An error occurred. Please try again.');
+      }
     }
-
-    setRegisteredUsers([...registeredUsers, formData.email]);
-    setSuccessMessage('Registration successful!');
-
-    setTimeout(() => {
-      navigate('/dashboard'); // 👈 redirect after success
-    }, 1000);
-
-    setFormData({ firstName: '', lastName: '', email: '', password: '' });
   };
 
   return (

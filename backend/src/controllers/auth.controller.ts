@@ -3,11 +3,9 @@ import User from '../models/user.model';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-
-
 // User Registration
 export const registerUser = async (req: Request, res: Response) => {
-  const { name, email, password } = req.body;
+  const { firstName, lastName, email, password } = req.body; // Extract firstName and lastName
 
   try {
     // Check if user already exists
@@ -16,12 +14,25 @@ export const registerUser = async (req: Request, res: Response) => {
       return res.status(400).json({ message: 'User already exists' });
     }
 
-    // Create new user
-    const user = new User({ name, email, password });
+    // Validate the input fields
+    if (!firstName || !lastName || !email || !password) {
+      return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    // Combine firstName and lastName into a single name field
+    const name = `${firstName} ${lastName}`;
+
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create a new user
+    const user = new User({ name, email, password: hashedPassword });
     await user.save();
 
+    // Respond with a success message
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
+    console.error('Error during registration:', error);
     res.status(500).json({ message: 'Error registering user', error });
   }
 };
