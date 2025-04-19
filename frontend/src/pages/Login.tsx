@@ -76,7 +76,7 @@ const Login = () => {
   };
 
   return (
-    <section className="flex min-h-screen bg-[#D6BFAA]">
+    <section className="flex min-h-screen bg-gradient-to-r from-[#D6BFAA] via-[#E0C6AC] to-[#FFF5E1]">
       {/* Left Side Image */}
       <div className="hidden md:flex w-1/2 items-center justify-center">
       <Lottie animationData={loginanimation} loop={true}/>
