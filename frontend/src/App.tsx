@@ -8,11 +8,13 @@ import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ScrollToTop from './utils/ScrollToTop' // ✅ Import the ScrollToTop component
 import './index.css'
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop /> {/* ✅ This ensures scroll to top on every route change */}
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">

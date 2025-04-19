@@ -87,7 +87,7 @@ const RegistrationPage = () => {
           Welcome 
         </h1>
 
-          <form className="space-y-4" onSubmit={handleSubmit}>
+          <form className="space-y-4" onSubmit={handleSubmit} >
             {/* First Name */}
             <div>
               <label className="block text-sm font-medium text-[#14532D]">
@@ -99,6 +99,7 @@ const RegistrationPage = () => {
                 value={formData.firstName}
                 onChange={handleInputChange}
                 className="mt-1 w-full px-4 py-2 border border-[#14532D]/40 rounded-md focus:outline-none focus:ring-2 focus:ring-[#14532D]"
+                 placeholder="Enter your First Name"
               />
             </div>
 
@@ -113,6 +114,7 @@ const RegistrationPage = () => {
                 value={formData.lastName}
                 onChange={handleInputChange}
                 className="mt-1 w-full px-4 py-2 border border-[#14532D]/40 rounded-md focus:outline-none focus:ring-2 focus:ring-[#14532D]"
+                placeholder="Enter your Last Name"
               />
             </div>
 
@@ -127,6 +129,8 @@ const RegistrationPage = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 className="mt-1 w-full px-4 py-2 border border-[#14532D]/40 rounded-md focus:outline-none focus:ring-2 focus:ring-[#14532D]"
+                placeholder="Enter your email"
+               
               />
             </div>
 
@@ -141,6 +145,7 @@ const RegistrationPage = () => {
                 value={formData.password}
                 onChange={handleInputChange}
                 className="mt-1 w-full px-4 py-2 border border-[#14532D]/40 rounded-md focus:outline-none focus:ring-2 focus:ring-[#14532D]"
+                placeholder="Enter your password"
               />
             </div>
 
@@ -159,7 +164,7 @@ const RegistrationPage = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-[#D97706] text-white py-2 rounded-md hover:bg-[#b45309] transition"
+              className="w-full bg-[#D97706] text-white py-2 rounded-md hover:bg-[#b45309] transition  cursor-pointer"
             >
               Register
             </button>
