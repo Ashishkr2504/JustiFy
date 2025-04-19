@@ -57,13 +57,8 @@ const Navbar = () => {
   }, [location]);
 
   return (
-<<<<<<< Updated upstream
     <nav className="bg-[#2E2E2E] text-white py-3 px-6 shadow-md fixed top-0 left-0 w-full z-50 h-16">
       <div className="w-full flex items-center justify-between relative">
-=======
-    <nav style={{ backgroundColor: '#2E2E2E' }} className="text-white py-3 px-6 shadow-md fixed top-0 left-0 w-full z-50 h-16">
-      <div className="container mx-auto flex items-center justify-between relative">
->>>>>>> Stashed changes
         {/* Logo */}
         <Link to="/" className="text-xl font-bold flex items-center space-x-2" onClick={handleScrollToTop}>
           <img src={icon} alt="Logo" className="h-10 w-10 rounded-full" />
