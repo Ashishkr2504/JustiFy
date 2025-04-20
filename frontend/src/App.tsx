@@ -17,7 +17,8 @@ import CaseTracker from './dashboard/CaseTracker'
 import LocationServices from './dashboard/LocationServices'
 import ScrollToTop from './utils/ScrollToTop' // ✅ Import the ScrollToTop component
 import './index.css'
-import { Outlet } from 'react-router-dom'
+
+// import { Outlet } from 'react-router-dom'
 declare namespace JSX {
   interface Element extends React.ReactElement<any, any> {}
 }
@@ -29,14 +30,6 @@ const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
 };
 
 
-const DashboardLayout = () => (
-  <>
-    <Dashboard />
-    <div className="absolute left-64 right-0 top-24 p-4">
-      <Outlet />
-    </div>
-  </>
-)
 const App = () => {
   return (
     <Router>
@@ -53,8 +46,9 @@ const App = () => {
             {/* <Route path="/dashboard/*" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} /> */}
             {/* <Route path="/dashboard/*" element={<Dashboard />} /> */}
             <Route path="/reset-password/:token" element={<ResetPassword />} />
-            <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
+            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}>
               {/* Default route for Dashboard */}
+
               <Route index element={<Navigate to="/dashboard/chatbot" replace />} />
               <Route path="chatbot" element={<Chatbot />} />
               <Route path="templates" element={<LegalTemplates />} />
