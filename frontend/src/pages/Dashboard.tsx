@@ -1,10 +1,10 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, Outlet } from 'react-router-dom'
 import {
    MessageCircle, FileText, Search,
   ClipboardList, MapPin
 } from 'lucide-react'
 import { motion } from 'framer-motion'
-import Chatbot from '../dashboard/Chatbot' // Import the Chatbot component
+// import Chatbot from '../dashboard/Chatbot' // Import the Chatbot component
 
 const Dashboard = () => {
   const location = useLocation()
@@ -59,7 +59,7 @@ const Dashboard = () => {
 
       {/* Main content area */}
       <main className="flex-1 px-6 pt-8">
-      <div className="flex flex-col justify-center max-w-xl text-center md:text-left">
+      {/* <div className="flex flex-col justify-center max-w-xl text-center md:text-left">
         <h2 className="text-4xl font-extrabold mb-6  tracking-wide text-[#2E2E2E]" style={{ fontFamily: '"Playfair Display", serif' }}>
         Hey there, welcome to your Dashboard!
         </h2>
@@ -68,15 +68,8 @@ const Dashboard = () => {
         Dive in and make justice easy!
         </p>
         </div>
-        <motion.div
-          className="bg-[#FFFAF0] rounded-2xl shadow p-6 mb-20 h-[80vh]" // Adjust height as needed
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {/* Render the Chatbot component */}
-          <Chatbot />
-        </motion.div>
+         */}
+         <Outlet />
       </main>
     </motion.div>
   )

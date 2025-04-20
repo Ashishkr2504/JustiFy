@@ -5,42 +5,32 @@ import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import Register from './pages/Register'
 import Login from './pages/Login'
-import Dashboard from './pages/Dashboard'
 import ResetPassword from './pages/ResetPassword'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ScrollToTop from './utils/ScrollToTop'
+import Dashboard from './pages/Dashboard'
 import Chatbot from './dashboard/Chatbot'
 import LegalTemplates from './dashboard/LegalTemplates'
 import DocumentAnalyzer from './dashboard/DocumentAnalyzer'
 import DocumentSearch from './dashboard/DocumentSearch'
 import CaseTracker from './dashboard/CaseTracker'
 import LocationServices from './dashboard/LocationServices'
-import ScrollToTop from './utils/ScrollToTop' // ✅ Import the ScrollToTop component
 import './index.css'
-import { Outlet } from 'react-router-dom'
+
 declare namespace JSX {
   interface Element extends React.ReactElement<any, any> {}
 }
 
-
 const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
-  const token = localStorage.getItem('token');
-  return token ? children : <Navigate to="/login" />;
-};
+  const token = localStorage.getItem('token')
+  return token ? children : <Navigate to="/login" />
+}
 
-
-const DashboardLayout = () => (
-  <>
-    <Dashboard />
-    <div className="absolute left-64 right-0 top-24 p-4">
-      <Outlet />
-    </div>
-  </>
-)
 const App = () => {
   return (
     <Router>
-      <ScrollToTop /> {/* ✅ This ensures scroll to top on every route change */}
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
@@ -50,12 +40,16 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            {/* <Route path="/dashboard/*" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} /> */}
-            {/* <Route path="/dashboard/*" element={<Dashboard />} /> */}
             <Route path="/reset-password/:token" element={<ResetPassword />} />
-            <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
-            {/* Default route for Dashboard */}
-            <Route index element={<Navigate to="/dashboard/chatbot" replace />} />
+            <Route
+              path="/dashboard/"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Navigate to="/dashboard/chatbot" replace />} />
               <Route path="chatbot" element={<Chatbot />} />
               <Route path="templates" element={<LegalTemplates />} />
               <Route path="analyzer" element={<DocumentAnalyzer />} />
