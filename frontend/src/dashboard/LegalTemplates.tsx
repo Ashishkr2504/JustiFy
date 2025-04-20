@@ -11,7 +11,7 @@ const LegalTemplatesPage = () => { return (
       Dive in and make justice easy!
   </p>
 
-  <motion.div className="bg-[#FFFAF0] p-6 rounded-2xl shadow w-full max-w-6xl mx-auto min-h-[60vh] mb-28"
+  <motion.div className="bg-[#FFFAF0] p-6 rounded-2xl shadow w-full max-w-6xl mx-auto min-h-[60vh] mb-18"
     initial={{ opacity: 0, y: 40 }} 
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }} > 
