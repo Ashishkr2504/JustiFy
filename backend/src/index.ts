@@ -6,6 +6,7 @@ import authRoutes from './routes/auth.routes';
 import chatbotRoutes from './routes/chatbot.routes';
 import contactRoutes from './routes/contact.routes';
 import { errorHandler } from './middlewares/error.middleware';
+import blogRoutes from './routes/blog.routes';
 
 dotenv.config();
 const app = express();
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/chatbot', chatbotRoutes);
 app.use('/api/contact', contactRoutes);
+app.use('/api/blogs', blogRoutes);
 
 // Error middleware
 app.use(errorHandler);
