@@ -1,9 +1,10 @@
 import { Link, useLocation } from 'react-router-dom'
 import {
-  LogOut, MessageCircle, FileText, Search,
+   MessageCircle, FileText, Search,
   ClipboardList, MapPin
 } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Chatbot from '../dashboard/Chatbot' // Import the Chatbot component
 
 const Dashboard = () => {
   const location = useLocation()
@@ -18,6 +19,7 @@ const Dashboard = () => {
   ]
 
   return (
+
     <motion.div
       className="flex bg-gradient-to-r from-[#FFF5E1] via-[#E0C6AC] to-[#D6BFAA] text-[#2E2E2E] pt-16 min-h-screen"
       initial={{ opacity: 0, x: 100 }}
@@ -28,7 +30,6 @@ const Dashboard = () => {
       {/* Sidebar (not fixed) */}
       <aside className="w-64 bg-gradient-to-r from-[#FFF5E1] via-[#E0C6AC] to-[#D6BFAA] px-6 py-9 flex flex-col justify-between shadow-lg min-h-[calc(100vh-4rem)]">
         <div className="space-y-6">
-          {/* <h2 className="text-2xl font-bold">JustiFy</h2> */}
           <nav className="space-y-4">
             {menu.map(({ path, label, icon: Icon }) => {
               const isActive = location.pathname === path
@@ -54,37 +55,28 @@ const Dashboard = () => {
             })}
           </nav>
         </div>
-        
       </aside>
 
       {/* Main content area */}
       <main className="flex-1 px-6 pt-8">
+      <div className="flex flex-col justify-center max-w-xl text-center md:text-left">
+        <h2 className="text-4xl font-extrabold mb-6  tracking-wide text-[#2E2E2E]" style={{ fontFamily: '"Playfair Display", serif' }}>
+        Hey there, welcome to your Dashboard!
+        </h2>
+        <p className="text-xl italic text-[#14532D] mb-6 ">
+        You've just unlocked your personal legal toolkit.  <br />
+        Dive in and make justice easy!
+        </p>
+        </div>
         <motion.div
-          className="bg-[#FFFAF0] rounded-2xl shadow p-4 mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <h1 className="text-xl font-semibold text-center">Welcome to your Dashboard</h1>
-          <p className="text-sm text-gray-600 text-center">
-            Manage all your legal tools in one place.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="bg-[#FFFAF0] rounded-2xl shadow p-80 mb-20"
+          className="bg-[#FFFAF0] rounded-2xl shadow p-6 mb-20 h-[80vh]" // Adjust height as needed
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-sm text-gray-600">
-          window.
-        </p>
-          {/* Routed child content via <Outlet /> */}
+          {/* Render the Chatbot component */}
+          <Chatbot />
         </motion.div>
-
-        {/* Footer */}
-       
       </main>
     </motion.div>
   )

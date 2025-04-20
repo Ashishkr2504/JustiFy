@@ -54,6 +54,8 @@ const App = () => {
             {/* <Route path="/dashboard/*" element={<Dashboard />} /> */}
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
+              {/* Default route for Dashboard */}
+              <Route index element={<Navigate to="/dashboard/chatbot" replace />} />
               <Route path="chatbot" element={<Chatbot />} />
               <Route path="templates" element={<LegalTemplates />} />
               <Route path="analyzer" element={<DocumentAnalyzer />} />
