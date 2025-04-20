@@ -18,7 +18,7 @@ const BlogCard: React.FC<BlogProps> = ({
   publishedAt,
 }) => {
   return (
-    <div className="bg-white shadow-md rounded-xl p-4 max-w-md w-full" style={{ backgroundColor: '#FFFFF0' }}>
+    <div className="bg-white shadow-md rounded-xl p-4 max-w-md w-full relative" style={{ backgroundColor: '#FFFFF0', paddingBottom: '4rem' }}>
       {/* Image */}
       <img
         src={urlToImage || 'https://via.placeholder.com/400x200?text=No+Image'}
@@ -42,7 +42,7 @@ const BlogCard: React.FC<BlogProps> = ({
         href={url}
         target="_blank"
         rel="noreferrer"
-        className="text-blue-500 mt-2 block"
+        className="absolute bottom-4 left-4 hover:bg-[#b85d04] text-white px-4 py-2 rounded-md mt-3 inline-block text-center  transition bg-[#D97706]"
       >
         Read More
       </a>

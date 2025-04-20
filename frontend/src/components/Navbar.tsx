@@ -43,6 +43,15 @@ const Navbar = () => {
     }
   };
    // Scroll when redirected from another route
+
+   const handleBlogClick = (e: React.MouseEvent) => {
+    if (location.pathname === '/blog') {
+      e.preventDefault(); // Prevent default navigation
+      window.location.reload(); // Force page reload
+    }
+  };
+
+
    useEffect(() => {
     const params = new URLSearchParams(location.search);
     const scrollTo = params.get('scrollTo');
@@ -74,7 +83,11 @@ const Navbar = () => {
         <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-6">
           <Link to="/" onClick={handleScrollToTop} className="hover:text-[#D97706] transition-colors duration-200">Home</Link>
 
-          <Link to="/blog" className="hover:text-[#D97706] transition-colors duration-200">Blog</Link>
+          <Link to="/blog" onClick={handleBlogClick} className="hover:text-[#D97706] transition-colors duration-200">
+          Blog
+        </Link>
+
+
           <a  
     href="#faq-section"
     onClick={handleScrollToFAQ}
@@ -106,7 +119,7 @@ const Navbar = () => {
             Register</Link>
             </>
           ) : (
-            <button onClick={handleLogout} className="flex items-center gap-2 bg-[#D97706] text-white font-semibold px-4 py-2 rounded-xl shadow hover:bg-[#b85d04] hover:scale-105 transition-all duration-200"
+            <button onClick={handleLogout} className="flex items-center gap-2 bg-[#D97706] text-white font-semibold px-4 py-2 rounded-xl shadow hover:bg-[#b85d04] hover:scale-105 transition-all duration-200 cursor-pointer"
             >
               <UserPlus className="w-4 h-4" />Logout</button>
           )}
