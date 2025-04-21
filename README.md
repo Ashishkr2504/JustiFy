@@ -1,4 +1,4 @@
-
+![Screenshot (11)](https://github.com/user-attachments/assets/8f445bce-6a54-4a73-9687-ab124293c05c)
 # JustiFy - Free Legal Aid Platform 🧑‍⚖️⚖️
 
 ### Created by: **Pallavi Kumari & Ashish Kumar**  
@@ -12,6 +12,21 @@
 **JustiFy** is an AI-powered legal aid platform designed to provide **free, instant, and accessible legal guidance** to low-income individuals across India. By integrating a custom-trained NLP/ML model with BAAI/bge-small-en and semantic search, it offers user-friendly legal help in both **English and Hindi**, reducing barriers to justice.
 
 ---
+![Screenshot (4)](https://github.com/user-attachments/assets/ad2ecfff-22b0-47ba-be27-18a2a339d164)
+
+![Screenshot (5)](https://github.com/user-attachments/assets/2ff216c1-e908-4cf9-8e71-2fe78a824b81)
+
+![Screenshot (10)](https://github.com/user-attachments/assets/83da1863-f5d2-43fc-8a65-cd031ecceb08)
+
+![Screenshot (6)](https://github.com/user-attachments/assets/376b65f8-1e25-45fa-8268-a40dff2de9f9)
+
+![Screenshot (8)](https://github.com/user-attachments/assets/a03c878a-1d35-4a77-a906-7d25ca480e1f)!
+
+![Screenshot (11)](https://github.com/user-attachments/assets/36bb0d22-1a99-4a18-ba5e-37f0520bc47e)
+
+![Screenshot (9)](https://github.com/user-attachments/assets/70b4bbb7-ffa2-4dc6-b65c-69f0d86f8951)
+
+![Screenshot (7)](https://github.com/user-attachments/assets/dc7ba592-823b-4aa9-8e61-3ad00137b23c)
 
 ## 🧠 Key Features
 
