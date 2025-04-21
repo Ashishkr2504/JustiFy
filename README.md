@@ -1,4 +1,4 @@
-![Screenshot (11)](https://github.com/user-attachments/assets/8f445bce-6a54-4a73-9687-ab124293c05c)
+
 # JustiFy - Free Legal Aid Platform 🧑‍⚖️⚖️
 
 ### Created by: **Pallavi Kumari & Ashish Kumar**  
