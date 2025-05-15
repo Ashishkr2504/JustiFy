@@ -17,6 +17,7 @@ import DocumentSearch from './dashboard/DocumentSearch'
 import CaseTracker from './dashboard/CaseTracker'
 import LocationServices from './dashboard/LocationServices'
 import TemplateForm from './dashboard/TemplateForm'
+import { ChatProvider } from './context/ChatContext';
 
 import './index.css'
 
@@ -77,4 +78,12 @@ const App = () => {
   )
 }
 
-export default App
+const Root = () => {
+  return (
+    <ChatProvider>
+      <App />
+    </ChatProvider>
+  )
+}
+
+export default Root

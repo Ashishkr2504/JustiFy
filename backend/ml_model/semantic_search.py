@@ -1,6 +1,7 @@
 import os
 import sys
 import io
+import json
 import numpy as np
 from pymongo import MongoClient
 from dotenv import load_dotenv
@@ -86,13 +87,11 @@ if __name__ == "__main__":
     query = sys.argv[1]
 
     rephrased_query = f"Please explain the legal process regarding: {query}"
-    results= semantic_search(rephrased_query)
+    results = semantic_search(rephrased_query)
 
-    print("\n📄 Top Results:")
+    top_results = []
     for i, doc in enumerate(results, 1):
-        print(f"\nResult {i}:")
-        # print(f"Source: {doc['source']}")
-        print(f"Text: {doc['text'][:500]}...")
+        top_results.append(doc['text'][:500] + "...")
 
     combined_context = " ".join([doc['text'] for doc in results])
     context_chunks = split_into_chunks(combined_context)
@@ -110,15 +109,18 @@ if __name__ == "__main__":
     if confidence_score >= 0.75:
         confidence_label = "High ✅"
     elif confidence_score >= 0.5:
-        confidence_label = "Medium ⚠️"
+        confidence_label = "Medium ⚠"
     else:
         confidence_label = "Low ❗"
 
-    if "Error generating answer" in best_answer or len(best_answer.strip()) < 20:
-        print("\n🧠 The system could not find a confident legal answer. Please rephrase your question or contact a legal expert.")
-    else:
-        print("\n🧠 Legal Answer:")
-        print(f"{best_answer}")
-        print(f"Confidence Score: {confidence_score:.2f} ({confidence_label})")
-       
-        print("Disclaimer: This is an AI-generated response always consult a legal expert for critical matter.")
+    disclaimer = "This is an AI-generated response always consult a legal expert for critical matter."
+
+    # Build the output in the desired order
+    output = {
+        "legal_answer": best_answer,
+        "top_results": top_results,
+        "confidence_score": f"{confidence_score:.2f} ({confidence_label})",
+        "disclaimer": disclaimer
+    }
+
+    print(json.dumps(output, ensure_ascii=False))
