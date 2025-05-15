@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Legal Notice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <p>Ref. No. <%= refNo %> Dated <%= noticeDate %></p>
+  <p>REGD.A.D.</p>
+  <h2>LEGAL NOTICE</h2>
+
+  <p>To,</p>
+  <p><%= recipientName %></p>
+
+  <p>Dear Sir,</p>
+
+  <p>
+    Pursuant to the instructions from and on behalf of my client <%= clientName %>, through its <%= clientRepresentative %>, I do hereby serve you with the following Legal Notice: -
+  </p>
+
+  <ol>
+    <li>
+      That my client is a <%= clientConstitution %> under the name and style of M/s <%= clientName %>.
+    </li>
+    <li>
+      That my client is engaged in the business of <%= clientBusiness %> of the <%= clientTrade %> etc.
+    </li>
+    <li>
+      That against your valid and confirmed order my client did your job work from time to time on credit basis as you have running credit account in the account books of my client operated in due course of business.
+    </li>
+    <li>
+      That my client raised bills of each and every work performed for payment, although you have acknowledged the receipt of such bills raised by my client.
+    </li>
+    <li>
+      That inspite of acknowledging the liability of payment of principal balance of Rs. <%= principalAmount %>/- you have been miserably failed to make payment of the said amount due to my client from you deliberately with malafide intent, hence you are liable to pay the said principal balance amount of Rs. <%= principalAmount %>/- alongwith interest @ <%= interestRate %>% p.a. from the date of due till actual realization of the said sum as is generally and customarily prevailing in the trade usages, which comes to Rs. <%= interestAmount %>/-
+    </li>
+    <li>
+      That thus you are liable to pay the total amount of Rs. <%= totalAmount %>/- to my above named client and my above named client is entitled to recover the same from you.
+    </li>
+    <li>
+      That my client requested you several times through telephonic message and by sending personal messenger to your office for release of the said outstanding payment, but you have always been dilly delaying the same on one pretext or the other and so far have not paid even a single paisa out of the said outstanding undisputed amount.
+    </li>
+  </ol>
+
+  <p>
+    I, therefore, through this Notice finally call upon you to pay to my client Rs. <%= totalAmount %>/- along with future interest @ <%= noticeInterestRate %>% p.a. from the date of notice till actual realization of the said amount, together with notice fee of Rs. <%= noticeFee %>/- to my client either in cash or by demand draft or Cheque which ever mode suits you better, within clear 30 days from the date of receipt of this notice, failing which my client has given me clear instructions to file civil as well as criminal lawsuit for recovery and other Miscellaneous proceedings against you in the competent court of law and in that event you shall be fully responsible for the same.
+  </p>
+
+  <p>
+    A copy of this Notice has been preserved in my office for record and future course of action.
+  </p>
+
+  <br>
+  <p>(<%= advocateSignature %>)</p>
+  <p>ADVOCATE</p>
+
+</body>
+</html>

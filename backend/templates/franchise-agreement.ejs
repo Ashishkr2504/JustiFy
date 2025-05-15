@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Franchise Agreement</title>
+ <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>DRAFT OF FRANCHISE AGREEMENT</h2>
+  <p>
+    This AGREEMENT entered into on the <%= agreementDay %> day of <%= agreementMonth %>, <%= agreementYear %>
+  </p>
+  <p>
+    BETWEEN:<br>
+    <%= companyName %> <%= companyType %>, having its Registered Office at <%= companyRegOffice %>, represented herein by its <%= companyRepTitle %> Shri <%= companyRepName %> (hereinafter referred to as the "XYZ Limited", which expression shall, whenever the context so requires or admits mean and include its successors and assigns) of the ONE PART;
+  </p>
+  <p>
+    AND<br>
+    M/s <%= agentFirmName %> a Partnership Firm, having its place of Business at <%= agentBusinessAddress %> represented herein by its Partner Shri <%= agentRepName %> (hereinafter referred to as the "AGENT", which expression shall, unless the context so requires or admits mean and include its Partners for the time being, their heirs, legal representatives, executors and permitted assigns) of the OTHER PART;
+  </p>
+  <p>
+    WHEREAS XYZ Limited is engaged interalia in the business of marketing <%= products %> and are the owners of the trade name and trade mark "<%= tradeName %>" and "<%= tradeMark %>";
+  </p>
+  <p>
+    WHEREAS XYZ Limited is desirous of promoting <%= promotionProducts %> under its trade name and trade mark by setting up chain or retail outlets all over the country on its own and also by appointing stockiest, retailers and franchises for the purpose of setting up of retail outlets;
+  </p>
+  <p>
+    WHEREAS the Agent has offered to set up one such Retail Outlet in the City of <%= retailCity %> and has represented to XYZ Limited that it is in a position to invest necessary capital and is also possessed of a suitable premises to set up and carry on the Retail Outlet and XYZ Limited has accepted the said offer;
+  </p>
+  <p>
+    NOW THIS AGREEMENT WITNESSETH AS FOLLOWS
+  </p>
+  <p>
+    That in consideration of the foregoing, the Company hereby appoints M/s <%= agentFirmName %> as its Agent in the City of <%= retailCity %> upon the following terms and conditions:
+  </p>
+  <ol>
+    <li>The retail outlet for marketing <%= products %> under the name and style of "<%= tradeName %>" shall be set up and run in the Premises made available by the Agent, which premises is more fully described in the Schedule Premises. The premises will be made available free of cost or charges to XYZ Limited by the Agent during the subsistence of this Agreement.</li>
+    <li>The Agent will meet and bear the entire cost of furnishing and decorating the interior and exterior of the Schedule-Premises in accordance with the specifications and requirements of XYZ Limited, particularly touching upon the following aspects -- elevation, décor and interior design, selection of furniture, fitting, counters and stands, lighting system, illumination, mannequins, window display, air conditioning, fire fighting equipment, furnishings, flooring, etc. the cost of which is estimated to be of the order of Rs.<%= premisesCost %> (Rupees <%= premisesCostWords %>). He shall also provide necessary warehousing facilities and office space for the Company's' representations.</li>
+    <li>The name of the Shop shall be promptly and clearly displayed as <%= shopName %>;</li>
+    <li>XYZ Limited will make available from time to time to the Agent <%= consignmentProducts %> products and shall be manufactured, sold or dealt in by XYZ Limited (hereinafter collectively referred to as "Stockiest") and the Agent will take the Stocks on consignment and sell the same in retail at prices fixed from time to time by the XYZ Limited. The stocks shall at all times be the property of the XYZ Limited and the Agent shall only be entrusted the Stocks for the purpose of enabling their retail sale.</li>
+    <li>The Agent at his cost will employ necessary personnel to man and manage the Retail Outlet to the entire satisfaction of XYZ Limited.</li>
+  </ol>
+  <strong>THE AGENT COVENANTS WITH THE COMPANY AS FOLLOWS:</strong>
+  <ol>
+    <li>It shall duly and promptly pay the owner of the Schedule Premises rents and other charges and keep the lease subsisting and valid and ensure that the Schedule Premises is always available for running of the Retail Outlet.</li>
+    <li>That it shall not directly or indirectly or in Partnership or Association, with friends or relatives, or Companies engaged itself in business, which is same or similar to the one being, carried on by XYZ Limited.</li>
+    <li>That it shall not sell, display or otherwise deal in any goods which are in any way similar to the goods sold or dealt in by XYZ Limited.</li>
+    <li>That it shall not use the Company's trade name and/or trademark in any manner other than that which is permitted by XYZ Limited.</li>
+    <li>That all sales effected by the Agent shall be strictly for cash only.</li>
+    <li>That it shall furnish to XYZ Limited at such intervals as they may require certified stocks statement of the stock of all goods held by the Agent giving full and correct particulars thereof.</li>
+    <li>That it shall remit each day the entire sale proceeds of the preceding day to the credit of the designated account of XYZ Limited, which may be indicated from time to time and shall forthwith send intimation of such remittances to XYZ Limited.</li>
+    <li>That it shall not draw, accept or endorse any Bill on behalf of the XYZ Limited or in any way pledge the credit of XYZ Limited except with the previous written authorization of XYZ Limited.</li>
+    <li>That it shall be at all times responsible to XYZ Limited for any damage occasioned to the Stock either on account of the improper or negligent conduct on the part of the Agent, its servants or agents or for any reason whatsoever and shall make good such loss to the XYZ Limited as and when demanded without demur.</li>
+    <li>That it shall furnish an irrevocable Bank Guarantee for a sum of Rs.<%= bankGuaranteeAmount %> (Rupees <%= bankGuaranteeAmountWords %>) in favour of XYZ Limited covering the value of the Stocks held by it on consignment and that the said Bank Guarantee shall be enhanced from time to time as may be required by XYZ Limited to bring it in conformity with the value of the Stocks held by the Agent.</li>
+    <li>That it shall keep proper accounts of all Stocks received, sold, damaged and furnish to XYZ Limited each week full particulars of the Stocks and shall permit XYZ Limited, its agents and servants to inspect all Books of Account, Records and vouchers maintained in the Retail Outlet by it all reasonable times.</li>
+    <li>That it shall be responsible for any loss or damage sustained to the Stock while in the custody of the Agent.</li>
+  </ol>
+  <p>
+    <strong>DURATION:</strong> The duration of this Agreement shall be for a period of <%= agreementDurationYears %> years commencing from <%= agreementStartDate %>. On the expiry of this period or earlier, the Agreement may be extended for such further period and on such terms as the parties may be mutually agreed in writing.
+  </p>
+  <p>
+    This Agreement is however terminable as follows:<br>
+    a. by either party giving the other <%= terminationNoticeDays %> days notice in writing;<br>
+    b. by XYZ Limited unilaterally without assigning any reasons<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;i. if the agent is found guilty of misconduct, or<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;ii. commits a breach of any of the provisions of the Agreement, or<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;iii. is dissolved, or<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;iv. any suit or other proceedings are instituted for its dissolution or winding up, or<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;v. commits any act of bankruptcy,<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;vi. suffers any execution or distress.
+  </p>
+  <p>
+    <strong>CONSIDERATION:</strong> In consideration of the foregoing, the Agent shall be entitled to a commission at the rate of <%= commissionPercent %>% of the net sale price realized by it in the Retail Outlet by sale of the Stocks. The expression net sale price shall mean the selling price of the Stocks excluding Sales Tax, local taxes and other levies imposed upon the sale or purchase of the Stocks and/or on the total turnover, packing and forwarding charges and gift wrapping charges.
+  </p>
+  <p>
+    The commission shall be payable by XYZ Limited on or before the <%= commissionDay %> Day of the succeeding month for which it is due upon receipt of the monthly statement of sales and realization of the sale proceeds.
+  </p>
+  <p>
+    <strong>ASSIGNMENT:</strong> This Agreement or the benefit there from shall not be assignable or transferable by the Agent in favour of anyone without prior written consent of the company.
+  </p>
+  <p>
+    <strong>SECURITY DEPOSIT:</strong> In order to ensure XYZ Limited the due performance of its obligations under this Agreement, the Agent has this day deposited a sum of Rs.<%= securityDepositAmount %> (Rupees <%= securityDepositAmountWords %>) by Pay Order bearing No.<%= payOrderNo %> dated <%= payOrderDate %> drawn on <%= payOrderBank %> Bank <%= payOrderBranch %> Branch, in favour of XYZ Limited as Security Deposit. The said amount will be refundable upon the termination of this Agreement, free of interest, in the event of there being no outstanding claim against the Agent by XYZ Limited. XYZ Limited will however be entitled to appropriate and adjust any amounts which may be due to it from the Agent from out of the Security Deposit.
+  </p>
+  <p>
+    <strong>JURISDICTION:</strong> This Agreement is executed at <%= jurisdictionCity %> City and it is hereby agreed that Court situated in <%= jurisdictionCity %> city alone will have exclusive jurisdiction over any matter arising under this Agreement to the execution of Courts situated in any part of the country.
+  </p>
+  <p>
+    <strong>SCHEDULE</strong><br>
+    Premises bearing No. <%= schedulePremisesNo %> situated at <%= schedulePremisesAddress %> admeasuring and bounded as follows:
+  </p>
+  <p>
+    <strong>MEASUREMENTS</strong><br>
+    East to West: <%= measureEastWest %><br>
+    North to South: <%= measureNorthSouth %>
+  </p>
+  <p>
+    <strong>BOUNDARIES</strong><br>
+    ON THE EAST: <%= boundaryEast %><br>
+    WEST: <%= boundaryWest %><br>
+    NORTH: <%= boundaryNorth %><br>
+    SOUTH: <%= boundarySouth %>
+  </p>
+  <p>
+    IN WITNESS WHEREOF the parties above named have executed these presents in the presence of the Witnesses attesting hereunder on the dates and place mentioned herein below:
+  </p>
+  <p>
+    Place: <%= place %><br>
+    Dated: <%= date %>
+  </p>
+  <p>
+    For XYZ Limited,
+  </p>
+  <p>
+    WITNESSES<br>
+    1. (<%= witness1 %>)<br>
+    2. (<%= witness2 %>)<br>
+    Agent
+  </p>
+</body>
+</html>

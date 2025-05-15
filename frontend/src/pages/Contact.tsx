@@ -74,7 +74,7 @@ const Contact = () => {
           <div className="flex items-center justify-center gap-8 mb-6 text-[#14532D]">
             <div className="flex items-center gap-2">
               <FiMail className="text-xl" />
-              <span className="text-sm">help@justify.in</span>
+              <span className="text-sm">anon49716@gmail.com</span>
             </div>
             <div className="flex items-center gap-2">
               <FiPhone className="text-xl" />

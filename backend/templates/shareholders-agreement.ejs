@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Shareholders Agreement</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>DRAFT OF SHAREHOLDERS AGREEMENT</h2>
+
+  <p style="text-align:center;"><strong>BETWEEN</strong></p>
+  <p style="text-align:center;">____________________</p>
+  <p style="text-align:center;"><strong>AND</strong></p>
+  <p style="text-align:center;">____________________</p>
+  <p style="text-align:center;">RE: Shares of <%= companyName %></p>
+
+  <p>
+    THIS AGREEMENT made the <%= agreementDay %> day of <%= agreementMonth %>, <%= agreementYear %> BETWEEN <%= partyAName %> residing at <%= partyAAddress %> (hereinafter referred to as "A") (which expression shall, unless repugnant to the context or meaning hereof, mean and include his heirs, executors, administrators and assigns) of the First Part.
+  </p>
+  <p>
+    And <%= partyBName %> residing at <%= partyBAddress %> (hereinafter referred to as "B") (which expression shall, unless repugnant to the context or meaning hereof, mean and include his heirs executors, administrators and assigns) of the Second Part.
+  </p>
+  <p>
+    And <%= companyName %> (<%= companyType %>), a Company incorporated under the Companies Act <%= companyAct %> and having its registered office at <%= companyRegOffice %> herein represented by its <%= companyRep %> (hereinafter referred to as "XYZ") which expression shall, unless repugnant to the context or meaning hereof, include its successors and assigns) of the Third Part;
+  </p>
+
+  <strong>WHEREAS:</strong>
+  <ol>
+    <li>A and B hereto have agreed to jointly manage a company in India named "<%= companyName %>";</li>
+    <li>A and B have agreed to become Equity Partners by investing in the shares of the Company subject to the condition that they shall enter into a Shareholders Agreement in terms of these presents;</li>
+    <li>The Company "<%= companyName %>" has been requested to, and has agreed to, join in the execution of these presents and to take this Agreement on record so that it is aware of the rights and obligations of A AND B, the parties hereto and ensure that they comply with the same;</li>
+    <li>The parties hereto are desirous of recording the terms and conditions of their Agreement in writing;</li>
+  </ol>
+
+  <strong>NOW IT IS HEREBY AGREED BY AND BETWEEN THE PARTIES HERETO AS FOLLOWS:-</strong>
+  <ol>
+    <li>
+      <ol type="a">
+        <li>A and B shall jointly invest in the Company which is an existing company limited by shares under the Companies Act, <%= companyAct %> and known as "<%= companyName %>".</li>
+        <li>The registered office of the Company shall be situated at <%= companyRegOfficeClause %>, or at such other places as may be mutually agreed upon between the parties in writing.</li>
+        <li>The Company shall carry on the business of running and managing restaurants and <%= companyBusinessDesc %>, either by itself or through other agencies or company industries and may carry on any other business as may be decided by B hereto and shall ensure that no other business activity is undertaken by the Company at any time without the consent of A hereto.</li>
+      </ol>
+    </li>
+    <li>
+      The authorised share capital of the Company is Rs.<%= companyAuthCapital %>/- (Rupees <%= companyAuthCapitalWords %> only) consisting of <%= companyEquityShares %> (<%= companyEquitySharesWords %>) equity shares of Rs.10/- (Rupees ten) each.
+    </li>
+    <li>
+      The subscription by A hereto to the aforesaid authorised share capital of the Company shall be <%= partyAShares %> (<%= partyASharesWords %>) equity shares of Rs.10/- (Rupees ten only) and the subscription by B to the aforesaid authorised share capital of the Company shall be <%= partyBShares %> (<%= partyBSharesWords %>) equity shares of Rs.10/-(Rupees ten only).
+    </li>
+    <li>
+      There shall be no further issue of capital without the consent of both the parties hereto, and unless otherwise agreed upon in writing further investment shall be as mutually decided by both parties.
+    </li>
+    <li>
+      <ol type="a">
+        <li>The Board of Directors of the Company shall consist of A and B</li>
+        <li>A shall have the right to nominate two (2) Additional Directors onto the Board and B shall have the right to nominate three or more Additional Directors on the Board. Both parties shall be entitled at any time to remove any of the representatives on the Board by written notice to the other party and to appoint another or other/s in their place.</li>
+        <li>The day to day management of the Company shall be looked after by a Managing Director to be appointed with the consent of B hereto. Any major acquisition of property, substantial expansion of business activities or diversification or matters of policy shall be with the prior consent of B.</li>
+        <li>It is agreed as between the parties hereto that the position of Chairperson of the Company shall be held by B or a nominee of B. The Chairman of the Board shall also be the Chairman of all general meetings of the Company.</li>
+      </ol>
+    </li>
+    <li>
+      A and B hereto jointly and severally shall vote and act as members of the Company and with respect to the shares of the Company held by them, so as to ensure that Directors of the Company are at all times appointed and maintained in office in conformity with the provisions of this Agreement. If at any time the provisions of this Agreement are not fully complied with, A and B jointly and severally agree to promptly take all necessary steps to ensure that the provisions of this Agreement hereof are fully implemented in letter and spirit.
+    </li>
+    <li>
+      <ol type="a">
+        <li>The Auditors of the Company shall be M/s.<%= auditorsName %>.</li>
+        <li>The Auditors of the Company shall not be changed without the prior written consent of both A and B.</li>
+      </ol>
+    </li>
+    <li>
+      Any sale or transfer of shares in the Company by either party shall be as provided in Clause 9. If at any time during the continuance of this Agreement either A or B, desire to sell or transfer all or any of their respective shares held by them in the Company, they shall do so strictly in accordance with the provisions hereinafter written.
+    </li>
+    <li>
+      If either A or B desires at any time to sell the whole or part of their shares in the Company, he shall first offer such shares in writing to the other. If the other does not accept in writing the offer within 15 days of receipt of the offer, the first party shall then be at liberty within 30 days thereafter to sell the shares so offered to any other persons of its choice at the same price and on the same terms and conditions as contained in its written offer to the other party hereto in the first instance, failing which the procedure contained in this sub-clause will have to be repeated by a party desiring to sell his shares.
+    </li>
+    <li>
+      B will bring in further working capital to run an F & B Unit(s) at (<%= companyRegOffice %>). <%= registeredBank %> Bank had advanced loans of about Rs. <%= loanAmount %> to XYZ which loans have to be repaid by them. B will be bringing further moneys upto Rs. <%= furtherMoneyByB %> to repay the loan. The Balance Rs. <%= collateralAmount %> has been secured with the collateral security provided B. XYZ have entered into a Management and Royalty Agreement with <%= managementCompany %> for the operation and management of the F & B unit(s) of XYZ and are entitled to receive their share of profit. A and B are equally entitled to this share of profit being equal share holders of XYZ. It is hereby agreed that A shall not be entitled to a percentage of the profit which shall not exceed Rs. <%= profitLimit %> (<%= profitLimitWords %>) per month from XYZ out of his share of profit subject to the terms contained herein and/or in any other document executed by him on behalf of XYZ. The balance money attributable to A shall be utilized to repay the loans and interest outstanding to <%= loanRepayBank %> Bank, and the amount of Rs. <%= loanRepayAmount %> brought in by B and interest thereon, and towards the working capital brought in by B and interest thereon and any other loans of the XYZ. This arrangement will continue till the entire sums (liabilities) together with the interest thereon have been repaid. However B will be entitled to withdraw the profit attributable to his share.
+    </li>
+    <li>
+      B will be entitled to interest at the rate of <%= interestRate %> per annum on the sums brought in by him or his Associates concerns businesses.
+    </li>
+    <li>
+      A and B agree and undertake not to disclose or divulge directly or indirectly to any third party any trade or business secret or other secret or confidential information pertaining to the business, affairs or transactions of each other or of the Company or of their clients or customers, that may have been disclosed, imparted to or acquired by either of them from the other or from the Company.
+    </li>
+    <li>
+      A and B jointly and severally undertake:-
+      <ol type="a">
+        <li>that they shall ensure that they, their representatives, proxies and agents representing them at general meetings of the shareholders of the Company shall at all times exercise their votes in such manner so as to comply with, and to fully and effectually implement, the provisions of this Agreement.</li>
+        <li>That if any resolution is proposed contrary to the terms of this Agreement, the parties, their representatives, proxies and agents representing them shall vote against it. If for any reason such a resolution is passed, the parties will, if necessary, join together and convene an extraordinary, general meeting of the Company in pursuance of section 169 of the Companies Act, 1956 or for implementing the terms of this Agreement.</li>
+      </ol>
+    </li>
+    <li>
+      A and B shall jointly and severally procure and/or ensure that the Director or Directors of its choice on the board of the Company shall at all times fully and effectually implement and comply with (including by exercise of voting rights at meetings of the Board or resolutions by circulation and on resolutions passed at a meeting of any Companies of the Directors) the provisions of this Agreement.
+    </li>
+    <li>
+      If either A or B shall commit a breach of any of the terms or provisions of this Agreement and shall fail to rectify such breach within Sixty (60) days from the receipt of written notice from the party complaining of the breach, then the latter shall be entitled, without prejudice to its other rights and remedies under this Agreement or at law, to terminate the Agreement recorded herein by written notice.
+    </li>
+    <li>
+      No modification of alteration of this Agreement or any of its terms or provisions shall be valid or binding on A and/or B unless made in writing duly signed by both.
+    </li>
+    <li>
+      This Agreement is personal to A and B and shall not be transferred or assigned in whole or in part by either party without the prior written consent of the other.
+    </li>
+    <li>
+      If any dispute or difference shall at any time arise between A and B as to any terms, provisions or matters contained herein on as to their respective rights, claims, duties or liabilities hereunder or otherwise, howsoever in relation to or arising out of or concerning this Agreement, such dispute or difference shall be referred to the arbitration. The venue of such arbitration shall be in <%= arbitrationVenue %>, unless otherwise agreed in writing. Such arbitration shall be held under and in accordance with the provisions of the Arbitration and Conciliation Act, 1996.
+    </li>
+    <li>
+      This Agreement represents the entire agreement between the parties hereto on the subject matter hereof and cancels and supersedes all prior agreements, arrangements or understandings, if any, whether oral or in writing, between the parties hereto on the subject matter hereof.
+    </li>
+  </ol>
+
+  <p>
+    IN WITNESS WHEREOF the parties hereto have executed these presents the day and year first hereinabove written.
+  </p>
+
+  <p>
+    SIGNED AND DELIVERED by <br>
+    MR. A<br>
+    in the presence of <%= witness1 %>
+  </p>
+  <p>
+    SIGNED AND DELIVERED by <br>
+    MR. B<br>
+    in the presence of <%= witness2 %>
+  </p>
+  <p>
+    SIGNED AND DELIVERED for and on behalf of <br>
+    XYZ <br>
+    by its SHAREHOLDERS AND AUTHORISED DIRECTORS <br>
+    MR. A <br>
+    MR. B <br>
+    in the presence of <%= witness3 %>
+  </p>
+
+</body>
+</html>

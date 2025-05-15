@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Rent Agreement</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Draft of Deed of Lease (for a Term of Years) Rent Agreement</h2>
+
+  <p>This Deed of Lease is made at <%= place %> this <%= day %> day of <%= month %>, <%= year %> between <%= lessorName %> of <%= lessorAddress %> hereinafter called 'The Lessor' of the One Part and <%= lesseeName %> also of <%= lesseeAddress %> hereinafter called 'The Lessee' of the Other Part.</p>
+
+  <p>WHEREAS the Lessor is absolutely seized and possessed of or otherwise well and sufficiently entitled to the land and premises described in the Schedule hereunder written.</p>
+
+  <p>AND WHEREAS the Lessor has agreed to grant to the Lessee a lease in respect of the said land and premises for a term of <%= leaseYears %> years in the manner hereinafter appearing.</p>
+
+  <p><strong>NOW This Deed Witnesseth as Follows:</strong></p>
+
+  <ol>
+    <li>
+      <p>In pursuance of the said agreement and in consideration of the rent hereby reserved and of the terms and conditions the Lessor doth hereby demise unto the Lessee all that the said land and premises situated at <%= propertyAddress %> to hold for <%= leaseYears %> years commencing from the 1st day of <%= startMonth %>, <%= startYear %> the monthly ground rent of Rs <%= rentAmount %> paid on or before the <%= rentDueDay %> day of each month.</p>
+    </li>
+
+    <li>
+      <p>The Lessee hereby covenants with the Lessor as follows:</p>
+      <ul>
+        <li>To pay the rent as above; first rent due on <%= firstRentDate %>.</li>
+        <li>To bear taxes of Rs <%= taxes %>.</li>
+        <li>To maintain property, with rights to demolish and rebuild.</li>
+        <li>To add/alter structures per authority approval.</li>
+        <li>Not to excavate/sell soil unnecessarily.</li>
+        <li>To use property for legal purposes allowed by authorities.</li>
+      </ul>
+    </li>
+
+    <li>
+      <p>The Lessor covenants that:</p>
+      <ul>
+        <li>They have full authority to lease the property.</li>
+        <li>On rent payment and compliance, Lessee shall enjoy peaceful possession.</li>
+      </ul>
+    </li>
+
+    <li>
+      <p>If rent is unpaid for <%= arrearsMonths %> months or covenants breached, the Lessor may re-enter the premises after notice and a grace period of <%= noticePeriod %> month(s).</p>
+    </li>
+
+    <li>
+      <p>Other terms:</p>
+      <ul>
+        <li>Upon lease end, all structures vest with Lessor without compensation.</li>
+        <li>Lessee needs written permission to assign/mortgage/sublet property.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p><strong>IN WITNESS WHEREOF</strong> the Lessor and the Lessee have put their respective hands on the original and duplicate hereof the day and year first herein above written.</p>
+
+  <p><strong>THE SCHEDULE ABOVE REFERRED TO</strong></p>
+
+  <p>Signed and delivered by the Within-named Lessor <%= lessorName %> in the presence of <%= Witness1 %></p>
+  <p>Signed and delivered by the Within-named Lessee <%= lesseeName %> in the presence of <%= Witness2 %></p>
+
+</body>
+</html>

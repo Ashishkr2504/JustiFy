@@ -1,30 +1,42 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from "react";
+import axios from "axios";
+
 const CaseTracker = () => {
+  const [cnr, setCnr] = useState("");
+  const [result, setResult] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    const { data } = await axios.post("/api/casetracker", { cnr });
+    setResult(data);
+    setLoading(false);
+  };
+
   return (
-    <div className=" px-9">
-  <h2 className="text-4xl font-extrabold mb-6  tracking-wide text-[#2E2E2E]" style={{ fontFamily: '"Playfair Display", serif' }}>
-      Hey there, welcome to your <br />Dashboard!
-  </h2>
-  <p className="text-xl italic text-[#14532D] mb-6 ">
-      You've just unlocked your personal legal toolkit.  <br />
-      Dive in and make justice easy!
-  </p>
-
-  <motion.div className="bg-[#FFFAF0] p-6 rounded-2xl shadow w-full max-w-6xl mx-auto min-h-[60vh] mb-18"
-    initial={{ opacity: 0, y: 40 }} 
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }} > 
-    <h2 className="text-2xl font-bold text-[#2E2E2E] mb-4">Case Tracker</h2> 
-    <p className="text-gray-700">Track your Case</p>
-    <div className="mt-6 space-y-3">
-     <p className="text-gray-700">• Case #1: Description of case #1.</p>
-     <p className="text-gray-700">• Case #2: Description of case #2.</p>
+    <div className="p-6">
+      <h2 className="text-xl font-semibold mb-4">Track Case by CNR Number</h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          type="text"
+          placeholder="Enter CNR Number (e.g. MHCC010118642022)"
+          value={cnr}
+          onChange={(e) => setCnr(e.target.value)}
+          required
+          className="border p-2 w-full"
+        />
+        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
+          {loading ? "Searching..." : "Search"}
+        </button>
+      </form>
+      {result && (
+        <div className="mt-6 bg-gray-100 p-4 rounded shadow">
+          <pre>{result}</pre>
+        </div>
+      )}
     </div>
-  </motion.div>
-</div>
-  
-  )
-}
+  );
+};
 
-export default CaseTracker
+export default CaseTracker;

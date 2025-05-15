@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Mortgage Deed</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>DRAFT OF SIMPLE MORTGAGE DEED</h2>
+
+  <p>
+    This Deed of Mortgage made at <%= deedPlace %> this <%= deedDay %> day of <%= deedMonth %>, <%= deedYear %> Between <%= mortgagorName %>, son of <%= mortgagorFatherName %> resident of <%= mortgagorAddress %> hereinafter called as a mortgagor of the ONE PART and <%= mortgageeName %>, son of <%= mortgageeFatherName %> resident of <%= mortgageeAddress %> hereinafter called as a mortgagee of the OTHER PART.
+  </p>
+
+  <p>
+    WHEREAS, the mortgagor is absolutely seized and possessed of or otherwise well and sufficiently entitled to the house bearing municipal no. <%= propertyMunicipalNo %> situated on <%= propertyRoad %> Road, <%= propertyCity %>, more particularly described in the Schedule hereunder written;
+  </p>
+
+  <p>
+    AND WHEREAS, the mortgagor has requested the mortgagee to lend him a sum of Rs. <%= loanAmount %> which the mortgagee has agreed on the mortgagor mortgaging his property.
+  </p>
+
+  <p>
+    NOW, This Deed Witnesseth That in pursuance to the said agreement and in consideration of the sum of Rs. <%= loanAmount %> at or before the execution of these presents paid by the mortgagee to the mortgagor (the receipt whereof, the mortgagor doth hereby admit and acknowledge and of and from the same hereby release and discharge the mortgagee), the mortgagor hereby covenants with the mortgagee that he will pay on the <%= repaymentDay %> day of <%= repaymentMonth %>, <%= repaymentYear %> (hereinafter called "the said date"), the said sum of Rs. <%= repaymentAmount %> with interest @ <%= interestRate %> % per annum from the date of these presents till the repayment of the said sum in full, every quarter the first instalment of interest to be paid on the <%= firstInterestDay %> day of <%= firstInterestMonth %>, <%= firstInterestYear %> and each subsequent instalment on the same day of July, October, January and April of each succeeding year until the said sum is repaid in full.
+  </p>
+
+  <p>
+    AND this deed further WITNESSETH that in consideration aforesaid, the mortgagor doth hereby transfer by way of mortgage his house bearing municipal no. <%= propertyMunicipalNo %> situated on <%= propertyRoad %> Road, <%= propertyCity %> and more particularly described in the Schedule hereunder written as a security for repayment of the said sum with interest @ <%= interestRate %> per annum with the condition that the mortgagor, his heirs, executors, administrators or assigns shall on the said date pay to the mortgagee, his heirs, executors, administrators or assigns the said sum of Rs. <%= repaymentAmount %> together with interest thereon at the rate mentioned above, the said mortgagee, his heirs, executors, administrators, or assigns shall at any time thereafter upon the request and at the cost of the mortgagor, his heirs, executors, administrators or assigns reconvey the said house, hereinbefore expressed to be mortgaged unto or to the use of the mortgagor, his heirs, executors, administrators or assigns or as he or they shall direct.
+  </p>
+
+  <p>
+    And It Is Hereby Agreed And Declared that if the mortgagor does not pay the said mortgage amount with interest when shall become due and payable under these presents, the mortgagee shall be entitled to sell the said house through any competent court and to realise and receive the said mortgage amount and interest, out of the sale proceeds of the house.
+  </p>
+
+  <p>
+    And It Is Further Agreed And Declared by the mortgagor that during the period, the mortgage amount is not paid and the said house remains as a security for the mortgage amount, the mortgagor shall insure the said house and take out an insurance policy in the joint names of the mortgagor and mortgagee and continue the said policy in full force and effect by paying premium and in case of default by the mortgagor to insure or to keep the insurance policy in full force and effect, the mortgagee can insure the said house and the premium paid by the mortgagee will be added to the mortgage amount, if not paid by the mortgagor on demand.
+  </p>
+
+  <p>
+    And It Is Further Agreed That the mortgagor can grant lease of the said house with the consent of the mortgagee in writing.
+  </p>
+
+  <p>
+    And It Is Further Agreed by the Mortgagor that he shall bear stamp duty, registration charges and other out of pocket expenses for the execution and registration of this deed and reconveyance deed but however each party will bear cost and professional charges of his Solicitor/Advocate.
+  </p>
+
+  <p>
+    IN WITNESS WHEREOF the parties have put their hands the day and year first hereunder written.
+  </p>
+
+  <p>
+    <strong>The Schedule above referred to</strong><br>
+    <%= scheduleDescription %>
+  </p>
+
+  <p>
+    Signed and delivered by <%= mortgagorName %> the within named mortgagor<br>
+    Signed and delivered by <%= mortgageeName %> the within named mortgagee
+  </p>
+
+  <p>WITNESSES:</p>
+  <ol>
+    <li><%= witness1 %></li>
+    <li><%= witness2 %></li>
+  </ol>
+
+</body>
+</html>

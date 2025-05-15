@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Affidavit and Indemnity</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>DRAFT OF AFFIDAVIT AND INDEMNITY</h2>
+  <p>
+    BY <%= byName %><br>
+    FAVOUR OF <%= inFavourOf %>
+  </p>
+  <p>
+    I, <%= deponentName %> aged <%= deponentAge %> years, do hereby solemnly declare and say as follows:-
+  </p>
+  <ol>
+    <li>
+      That I am employed with <%= employer %> (hereinafter referred to as "the bank").
+    </li>
+    <li>
+      That the Bank has presently taken residential premises being situated at <%= premisesLocation %> known as <%= premisesName %> (hereinafter referred to as "the said premises") situated at <%= premisesAddress %> from <%= premisesOwner %> on leave and license basis for the purpose of providing residential accommodation for me and my immediate family members.
+    </li>
+    <li>
+      At my request, the Bank has permitted me to use the premises as per terms and conditions of the Agreement dated <%= agreementDate %>, as perquisite to my service.
+    </li>
+    <li>
+      I do hereby declare, agree and undertake that:-
+      <ol type="a">
+        <li>
+          I shall vacate the said premises on the expiry or earlier determination of the said leave and license agreement dated <%= leaveLicenseEndDate %>.
+        </li>
+        <li>
+          I shall use the premises only for the purpose of residence of myself and I shall not part with the possession of the premises or any part thereof to any one else.
+        </li>
+        <li>
+          I shall not commit any breach of any of the terms and conditions of the Agreement under which the Company has taken possession of the premises.
+        </li>
+        <li>
+          I confirm that I am aware of the terms and conditions of the Agreement under which the company has acquired the said premises on leave and licence basis.
+        </li>
+        <li>
+          I confirm that on happening of any of the following events, <%= companyName %> shall be at liberty to demand and take possession of the said premises and I shall indemnify and keep <%= indemnifiedParty %> indemnified against any loss or damage which <%= indemnifiedParty %> may suffer or incur due to my non-compliance, intentioned or otherwise, with any of the following:-
+          <ol type="i">
+            <li>
+              For not vacating the premises on termination of my employment with the company for any reasons whatsoever (whether any retirement, resignation or otherwise).
+            </li>
+            <li>
+              For not vacating the premises on my services being transferred from <%= transferFrom %> to any place outside <%= transferTo %>.
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li>
+      On my committing breach of any of the terms and conditions of the Agreement under which the company holds the premises.
+    </li>
+    <li>
+      I further declare that the undertaking and assurance given by me in paragraph 4(d) above is and shall be binding on my family, my heirs, administrators, executors and legal representatives and any person staying in the said premises at the time of my death.
+    </li>
+    <li>
+      In the event of my committing any breach of any of the terms and conditions under which I have been allowed to use the premises, <%= companyName %> shall be entitled without prejudice to his other rights to take such legal action or proceedings against me including criminal proceedings as <%= companyName %> may lawfully be advised.
+    </li>
+    <li>
+      This undertaking-cum-indemnity shall be binding on me till I am occupying the said premises.
+    </li>
+    <li>
+      I confirm that what has been stated hereinabove is true to my own knowledge and that on the basis of the declaration made by me herein <%= companyName %> has permitted the bank the use of the premises.
+    </li>
+  </ol>
+  <p>
+    Solemnly declared by the aforesaid<br>
+    On this <%= swornDay %> day of <%= swornMonth %>, <%= swornYear %>
+  </p>
+  <p>
+    Sworn Before me,<br>
+    Dated this <%= swornBeforeDay %> day of <%= swornBeforeMonth %> <%= swornBeforeYear %>
+  </p>
+</body>
+</html>

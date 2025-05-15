@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bond and Bail Bond under CrPC, 1973</title>
+ <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Draft of Bond and Bail Bond under Criminal Procedure Code, 1973 after Arrest Under a Warrant</h2>
+
+  <p>
+    I (<%= personName %>), <%= personAddress %> being brought before the District Magistrate of <%= magistrateCourt %> (or as the case may be) under a warrant issued to compel my appearance to answer to the charge of <%= charge %> do hereby bind myself to attend in the court of <%= answerCourt %> on the <%= answerDay %> day of <%= answerMonth %>, <%= answerYear %> to answer to the said charge, and to continue to attend until otherwise directed by the court, and in case of my making default herein, I bind myself to forfeit to Government, the sum of Rs. <%= forfeitAmount %>.
+  </p>
+
+  <p>
+    Dated this <%= bondDateDay %> day of <%= bondDateMonth %>, <%= bondDateYear %>
+  </p>
+
+  <p>
+    (Signature): <%= personSignature %>
+  </p>
+
+  <hr style="margin: 32px 0;">
+
+  <p>
+    I, <%= suretyName %>, do hereby declare myself surety for the above named <%= suretyForPerson %> of <%= suretyAddress %> that he shall attend before <%= suretyCourt %> in the court of <%= suretyAnswerCourt %> on the <%= suretyAnswerDay %> day of <%= suretyAnswerMonth %>, <%= suretyAnswerYear %>, to answer to the charge on which he has been arrested, and shall continue to attend until otherwise directed by the court and in case of his making default therein, I bind myself to forfeit, to Government the sum of Rs. <%= suretyForfeitAmount %>.
+  </p>
+
+  <p>
+    Dated this <%= suretyDateDay %> day of <%= suretyDateMonth %>, <%= suretyDateYear %>
+  </p>
+
+  <p>
+    (Signature): <%= suretySignature %>
+  </p>
+
+</body>
+</html>

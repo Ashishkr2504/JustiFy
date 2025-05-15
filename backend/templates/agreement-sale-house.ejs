@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Agreement for Sale of a House</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>DRAFT OF AGREEMENT FOR SALE OF A HOUSE</h2>
+
+  <p>
+    This Agreement of sale made at <%= agreementPlace %> on this <%= agreementDay %> day of <%= agreementMonth %>, <%= agreementYear %>, between <%= vendorName %> son of <%= vendorFatherName %> resident of <%= vendorAddress %> hereinafter called the vendor of the ONE PART and <%= purchaserName %> son of <%= purchaserFatherName %> resident of <%= purchaserAddress %> hereinafter called the purchaser of the OTHER PART.
+  </p>
+
+  <p>
+    WHEREAS the vendor is absolutely seized and possessed of or well and sufficiently entitled to the house more fully described in the Schedule hereunder:
+  </p>
+
+  <p>
+    AND WHEREAS, the vendor has agreed to sell his house to the purchaser on the terms and conditions hereafter set-forth.
+  </p>
+
+  <p><strong>NOW this Agreement Witnesseth as Follows</strong></p>
+
+  <ol>
+    <li>
+      The vendor will sell and the purchaser will purchase that entire house No. <%= houseNo %>, Road <%= houseRoad %>, more particularly described in the Schedule hereunder written at a price of Rs. <%= salePrice %> free from all encumbrances.
+    </li>
+    <li>
+      The purchaser has paid a sum of Rs. <%= earnestMoney %> as earnest money on <%= earnestMoneyDate %> (the receipt of which sum, the vendor hereby acknowledges) and the balance amount of consideration will be paid at the time of execution of conveyance deed.
+    </li>
+    <li>
+      The sale shall be completed within a period of <%= completionPeriod %> months from this date and it is hereby agreed that time is the essence of the contract.
+    </li>
+    <li>
+      The vendor shall submit the title deeds of the house in his possession or power to the purchaser's advocate within one week from the date of this agreement for investigation of title and the purchaser will intimate about his advocate's report within <%= advocateReportDays %> days after delivery of title deeds to his advocate.
+    </li>
+    <li>
+      If the purchaser's Advocate gives the report that the vendor's title is not clear, the vendor shall refund the earnest money, without interest to the purchaser within <%= refundDays %> days from the date of intimation about the advocate's report by the purchasers. If the vendor does not refund the earnest money within <%= refundInterestDays %> days from the date of intimation about the advocate's report, the vendor will be liable to pay interest @ <%= refundInterestRate %> p.m. upto the date of repayment of earnest money.
+    </li>
+    <li>
+      The vendor declares that the sale of the house will be without encumbrances.
+    </li>
+    <li>
+      The vendor will hand over the vacant possession of the house on the execution and registration of conveyance deed.
+    </li>
+    <li>
+      If the purchaser commits breach of the agreement, the vendor shall be entitled to forfeit the earnest money paid by the purchaser to the vendor and the vendor will be at liberty to resell the property to any person.
+    </li>
+    <li>
+      If the vendor commits breach of the agreement, he shall be liable to refund earnest money, received by him and a sum of Rs. <%= liquidatedDamages %> by way of liquidated damages.
+    </li>
+    <li>
+      The vendor shall execute the conveyance deed in favour of the purchaser or his nominee as the purchaser may require, on receipt of the balance consideration.
+    </li>
+    <li>
+      The vendor shall at his own costs obtain clearance certificate under section 230A, Income tax Act, 1961 and other permissions required for the completion of the sale.
+    </li>
+    <li>
+      The expenses for preparation of the conveyance deed, cost of stamp, registration charges and all other out of pocket expenses shall be borne by the purchaser.
+    </li>
+  </ol>
+
+  <p><strong>Schedule above referred to</strong></p>
+  <p><%= scheduleDescription %></p>
+
+  <p>
+    IN WITNESS WHEREOF the parties have set their hands to this Agreement on the day and year first hereinabove written.
+  </p>
+
+  <p>
+    Signed and delivered by Shri <%= vendorName %><br>
+    the within named vendor
+  </p>
+  <p>
+    Signed and delivered by Shri <%= purchaserName %><br>
+    the within named purchaser
+  </p>
+
+  <p>WITNESSES:</p>
+  <ol>
+    <li><%= witness1 %></li>
+    <li><%= witness2 %></li>
+  </ol>
+
+</body>
+</html>

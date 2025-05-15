@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Service Agreement</title>
+ <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>DRAFT OF EMPLOYEE SERVICE AGREEMENT</h2>
+  <p>
+    THIS EMPLOYEE SERVICE AGREEMENT executed at <%= agreementPlace %> on this the <%= agreementDay %> day of <%= agreementMonth %>
+  </p>
+  <p>
+    BETWEEN<br>
+    <%= employerCompany %>, a company incorporated under the Companies Act, 1956 or Companies Act, 2013, represented by its <%= employerRepTitle %> Mr./Ms. <%= employerRepName %>, son of/daughter of Mr. <%= employerRepFather %> having its registered office at <%= employerRegOffice %>, hereinafter referred to as the EMPLOYER (which expression shall, unless it is repugnant to the context, mean and include its successors-in-interests, administrators and permitted assigns);
+  </p>
+  <p>
+    AND<br>
+    Mr./Ms. <%= employeeName %>, son of/wife of/daughter of Mr. <%= employeeFather %>, <%= employeeNationality %>, aged about <%= employeeAge %> years, residing at <%= employeeAddress %>, hereinafter referred to as the EMPLOYEE.
+  </p>
+  <p>
+    WHEREAS<br>
+    The EMPLOYER is carrying on the business of <%= employerBusiness %>.<br>
+    The EMPLOYER called for applications from the eligible candidates for the post <%= postApplied %> and in response thereto an application dated <%= applicationDate %> was forwarded by the EMPLOYEE to the EMPLOYER.<br>
+    On processing the application and the relevant documents, the EMPLOYER found the EMPLOYEE adequately qualified for the post and offered to appoint him/her as <%= appointmentPost %> in the Company.<br>
+    The EMPLOYEE has accepted the said appointment on the terms and conditions hereinafter set out.
+  </p>
+  <p>
+    NOW THEREFORE IN CONSIDERATION OF THE MUTUAL OBLIGATIONS AND UNDERTAKINGS CONTAINED HEREIN THIS AGREEMENT WITNESSETH AS FOLLOWS
+  </p>
+  <ol>
+    <li><strong>NAME OF THE POST:</strong><br>
+      The said EMPLOYEE is hereby appointed as <%= appointedPost %>.
+    </li>
+    <li><strong>PROBATION AND CONFIRMATION:</strong><br>
+      The EMPLOYEE shall be on probation for a period of <%= probationPeriod %>. The decision of the management on the performance of the EMPLOYEE during the period of probation is final and binding on the EMPLOYEE.
+    </li>
+    <li><strong>DURATION OF EMPLOYMENT:</strong><br>
+      On successful completion of probation, the EMPLOYEE shall be appointed as a permanent EMPLOYEE of the EMPLOYER for a period of <%= employmentDuration %>.
+    </li>
+    <li><strong>PLACE OF POSTING:</strong><br>
+      The EMPLOYEE shall report to work at <%= postingPlace %>, on <%= reportingDate %>.
+    </li>
+    <li><strong>HOURS OF WORK:</strong><br>
+      The EMPLOYEE is required to work from <%= workStartTime %> to <%= workEndTime %> during the Weekdays. The weekly holiday would be on <%= weeklyHoliday %>.
+    </li>
+    <li><strong>REMUNERATION:</strong><br>
+      The EMPLOYER shall pay the EMPLOYEE a stipend of Rs. <%= probationStipend %>/- during the period of probation. On successful completion of probation the EMPLOYER shall pay the EMPLOYEE a basic salary of Rs. <%= basicSalary %>.<br>
+      The EMPLOYER shall increase the basic salary of the EMPLOYEE as per the policy of the EMPLOYER.
+    </li>
+    <li><strong>PERQUISITES & HOLIDAYS:</strong><br>
+      On confirmation, the EMPLOYEE shall be entitled to other benefits, monetary/leave, as is prevalent in the Company, from time to time, as per the <%= companyPolicy %>.
+    </li>
+    <li><strong>ARBITRATION:</strong><br>
+      Any dispute arising under this Agreement or any matter incidental thereto, shall be submitted for arbitration as per the provisions of Arbitration and Conciliation Act, 1996.
+    </li>
+  </ol>
+  <p>
+    IN WITNESS WHEREOF the parties hereto affixed their signatures on the day, month and year mentioned herein above.
+  </p>
+  <p>
+    SIGNATURE OF EMPLOYER<br><br>
+    SIGNATURE OF THE EMPLOYEE
+  </p>
+  <p>
+    WITNESSES:<br>
+    1. <%= witness1 %><br>
+    2. <%= witness2 %>
+  </p>
+</body>
+</html>

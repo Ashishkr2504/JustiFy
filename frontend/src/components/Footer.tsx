@@ -38,18 +38,24 @@ const Footer = () => {
             <li className="flex items-center gap-2">
               <Mail size={18} className="text-[#A7F3D0]" />
               <a href="mailto:contact@justify.in" className="hover:text-[#D6BFAA] transition">
-                contact@justify.in
+                anon49716@gmail.com                
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail size={18} className="text-[#A7F3D0]" />
+              <a href="mailto:contact@justify.in" className="hover:text-[#D6BFAA] transition">
+                nc884514@gmail.com                
               </a>
             </li>
             <li className="flex items-center gap-2">
               <Phone size={18} className="text-[#A7F3D0]" />
-              <span>+91 98765 43210</span>
+              <span>+91 9876543210</span>
             </li>
             <li className="flex items-center gap-2">
               <Phone size={18} className="text-[#A7F3D0]" />
-              <span>+91 91234 56789</span>
+              <span>+91 9123456789</span>
             </li>
-            <li className="mt-2">New Delhi, India</li>
+            <li className="mt-2">Greater Noida, India</li>
           </ul>
         </div>
       </div>

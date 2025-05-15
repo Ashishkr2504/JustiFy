@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Memorandum of Understanding</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>DRAFT OF MEMORANDUM OF UNDERSTANDING</h2>
+  <p style="text-align:center;"><strong><%= abcName %> and <%= xyzName %>.</strong></p>
+  <p style="text-align:center;">Re: <%= companyName %> Pvt. Ltd.</p>
+  <p>
+    THIS MEMORANDUM OF UNDERSTANDING made on this <%= mouDateDay %> day of <%= mouDateMonth %> between <%= abcName %> having his office at <%= abcOffice %>, India hereinafter referred to as "ABC" (which expression and the expression "ABC Group" shall unless it be repugnant to the context or meaning thereof mean and include himself and the present other shareholders of <%= companyName %> Pvt. Ltd. and their respective heirs, executors, administrators and assigns) of the One Part and <%= xyzName %> having his office at <%= xyzOffice %>. (Hereinafter referred to as "XYZ" which expression and the expression "XYZ Group" shall unless it be repugnant to the context or meaning thereof be deemed to mean and include himself and his nominees to the extent specified herein and their respective heirs, executors, administrators and assigns) of the SECOND PART;
+  </p>
+  <p>
+    WHEREAS, ABC is one of the founding shareholders and is Chairman and Director of a company incorporated in India known as <%= companyName %> Pvt. Ltd. hereinafter referred to as "the Company" which is in the process of setting up an internet portal, relating to <%= companyBusiness %>, known as "<%= portalName %>";
+  </p>
+  <p>
+    AND WHEREAS, ABC and certain other persons have advanced sums of money to the Company in respect of which shares have been/are to be issued to them and this group is for the sake of brevity referred to as the "XYZ Group";
+  </p>
+  <p>
+    AND WHEREAS, XYZ has agreed that he and his nominees (for the sake of brevity referred to as the "ABC Group") will invest an amount of Rs.<%= xyzInvestment %> (Rupees <%= xyzInvestmentWords %> Only) to acquire <%= xyzCapitalPercent %> of the Capital of the Company on certain terms and conditions and equity shares of the Company will be issued to the members of XYZ Group accordingly;
+  </p>
+  <p>
+    AND WHEREAS, the parties hereto are desirous of recording the terms and conditions of their agreement in writing
+  </p>
+  <strong>NOW THIS MEMORANDUM OF UNDERSTANDING WITNESSETH AS UNDER:-</strong>
+  <ol>
+    <li>ABC Group has caused to be incorporated a Company known as <%= companyName %> Pvt. Ltd. hereinafter referred to as "the Company" and has, since several months been working on establishing an internet portal relating to <%= companyBusiness %>.</li>
+    <li>The paid up capital of the Company shall be Rs.<%= paidUpCapital %> (Rupees <%= paidUpCapitalWords %> only) comprising <%= equityShares %> (<%= equitySharesWords %>) equity shares of Rs.<%= shareValue %> (Rupees <%= shareValueWords %>) each.</li>
+    <li>It has been agreed that XYZ group shall hold <%= xyzCapitalPercent %> of the paid-up capital of the Company and that ABC Group shall hold <%= abcCapitalPercent %> of the paid-up capital of the Company.</li>
+    <li>It is further agreed that <%= stockOptionsTotal %> shall be allotted by ABC Group as and by way of stock options at their discretion to employees, associates, content writers and Technology partners and other supporters on such terms as decided by the Group. It has however been agreed that <%= stockOptionsXYZ %> out of this <%= stockOptionsTotal %> shall be allotted to <%= xyzName %> and <%= stockOptionsPQR %> to Mr. PQR leaving thereby <%= stockOptionsABC %> to be allotted by ABC Group as described above.</li>
+    <li>XYZ has agreed that for the <%= xyzCapitalPercent %> to be allotted to the XYZ Group, the XYZ Group shall pay to the Company a total amount of Rs.<%= xyzPaymentTotal %>/- (Rupees <%= xyzPaymentTotalWords %> Only) to comprise share capital and premium of the total amount of Rs.<%= xyzPaymentShareCapital %>/- (Rupees <%= xyzPaymentPremium %> Only) an amount of approximately Rs.<%= xyzPaymentReceived %>/- (Rupees <%= xyzPaymentReceivedWords %> Only) being the equivalent of U.S. $ <%= xyzPaymentUSD %>/- has already been received by the Company by way of Foreign Inward Remittance received from XYZ. These amounts already received have been treated by the Company as advances against share capital and premium. The balance amount of Rs.<%= xyzPaymentBalance %>/- (Rupees <%= xyzPaymentBalanceWords %> Only) approximately is to be paid in the following manner.
+      <ul>
+        <li>a. Rs.<%= xyzPaymentScheduleA %> (Rs.<%= xyzPaymentScheduleA %> Only) by <%= xyzPaymentScheduleADate %></li>
+        <li>b. Rs.<%= xyzPaymentScheduleB %> (Rupees <%= xyzPaymentScheduleB %> Only) by <%= xyzPaymentScheduleBDate %></li>
+        <li>c. Rs.<%= xyzPaymentScheduleC %>/- (Rupees <%= xyzPaymentScheduleC %> Only) by <%= xyzPaymentScheduleCDate %></li>
+        <li>d. Rs.<%= xyzPaymentScheduleD %>/- (Rupees <%= xyzPaymentScheduleD %> Only) by <%= xyzPaymentScheduleDDate %></li>
+        <li>e. Rs.<%= xyzPaymentScheduleE %>/- (Rupees <%= xyzPaymentScheduleE %> Only) by <%= xyzPaymentScheduleEDate %></li>
+        <li>f. Rs.<%= xyzPaymentScheduleF %>/- (Rupees <%= xyzPaymentScheduleF %> Only) by <%= xyzPaymentScheduleFDate %></li>
+        <li>g. The balance to make up Rs.<%= xyzPaymentScheduleG %>/- (Rupees <%= xyzPaymentScheduleG %> only) by <%= xyzPaymentScheduleGDate %></li>
+      </ul>
+    </li>
+    <li>It has been mutually agreed that the Company shall not further dilute its equity or avail of finance from any other person nor shall it agree to allot any shares to any other person without the consent of XYZ. It has been further agreed that ABC Group shall not sell all or any of the shares allotted to them without the consent of XYZ Group until such time as there is an IPO or a second round of financing by mutual agreement. In the event of a second round of financing becoming necessary, it shall be done by mutual Agreement between the parties hereto and it is expected that an Initial Public Offering (IPO) will also be made and that shares will be issued to the public. The parties have agreed that for any future rounds of financing as mutually decided there will be a proportionate dilution of shares.</li>
+    <li>XYZ shall have the right to be a Director of the Company and ABC shall cause XYZ to be appointed to the Board of Directors whenever XYZ desires.</li>
+    <li>ABC shall cause this Memorandum of Understanding to be taken on the records of the Company and the Company will also agree to abide by all the terms and conditions hereof.</li>
+    <li>The parties hereto record that this Memorandum of Understanding reflects the broad terms of their Agreement and they agree to execute and sign a detailed Shareholders Agreement and such further Agreements in writing as may be required from time to time to give effect to the development promotion and financing of the portal in the best possible way.</li>
+  </ol>
+  <p>
+    IN WITNESS WHEREOF the parties hereto have hereunto set and subscribed their respective hands the day and year first hereinabove written.
+  </p>
+  <p>
+    SIGNED AND DELIVERED by the Withinnamed<br>
+    <%= abcName %><br>
+    In the presence of <%= abcWitness %>
+  </p>
+  <p>
+    SIGNED AND DELIVERED by the Withinnamed<br>
+    <%= xyzName %><br>
+    In the presence of <%= xyzWitness %>
+  </p>
+</body>
+</html>

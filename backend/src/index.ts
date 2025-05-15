@@ -7,6 +7,13 @@ import chatbotRoutes from './routes/chatbot.routes';
 import contactRoutes from './routes/contact.routes';
 import { errorHandler } from './middlewares/error.middleware';
 import blogRoutes from './routes/blog.routes';
+import templateRoutes from './routes/template.routes';
+import documentAnalyzerRoutes from './routes/documentAnalyzer.route';
+import documentSearchRoutes from './routes/documentSearch.route';
+import caseTrackerRoute from "./routes/caseTrackerRoute";
+
+
+// import locationRoutes from './routes/location.routes';
 
 dotenv.config();
 const app = express();
@@ -19,6 +26,12 @@ app.use('/api/auth', authRoutes);
 app.use('/api/chatbot', chatbotRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/blogs', blogRoutes);
+app.use('/api/templates', templateRoutes);
+app.use('/api/document', documentAnalyzerRoutes);
+app.use('/api/document', documentSearchRoutes);
+app.use("/api/casetracker", caseTrackerRoute);
+
+// app.use('/api/location', locationRoutes);
 
 // Error middleware
 app.use(errorHandler);

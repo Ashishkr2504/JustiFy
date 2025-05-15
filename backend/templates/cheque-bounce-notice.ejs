@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cheque Bounce Notice</title>
+  <style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.9;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    max-width: 900px;
+    color: #2c2c2c;
+    font-size: 1.25rem;
+    background-color: #fafafa;
+  }
+
+  h2 {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 2.5rem;
+    font-size: 2.2rem;
+    color: #1e1e1e;
+  }
+
+  p {
+    text-align: justify;
+    margin-bottom: 2rem;
+    line-height: 2;
+    font-size: 1.25rem;
+  }
+
+  ol, ul {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    font-size: 1.25rem;
+  }
+
+  li {
+    margin-bottom: 1rem;
+  }
+
+  strong {
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #000;
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 600px) {
+    body {
+      font-size: 1.1rem;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+    }
+  }
+</style>
+
+
+</head>
+<body>
+
+  <p style="text-align:right;">Date: <%= noticeDate %></p>
+
+  <p>
+    To,<br>
+    <%= partyName %><br>
+    <%= partyAddress %><br>
+    <%= partyContact %>
+  </p>
+
+  <p><strong>Sub: Legal notice under section 138 of Negotiable Instrument Act for dishonour of cheque.</strong></p>
+
+  <p>Dear Sir/Madam,</p>
+
+  <p>
+    Under instructions and authority from my client M/s. <%= clientName %> we serve upon you the following legal notice.
+  </p>
+
+  <p>
+    That my client is a Private Limited Company engaged in <%= clientBusiness %> the name of <%= clientName %> having office at <%= clientOffice %>.
+  </p>
+
+  <p>
+    That in the year <%= yearOfPurchase %> you have approached my client through E-mail communication of your employee <%= employeeName %> to purchase <%= product %> for your office. Subsequently you have issued purchase order dated <%= purchaseOrderDate %> amounting to rupees <%= purchaseOrderAmount %> for <%= purchaseOrderProduct %>.
+  </p>
+
+  <p>
+    That you have promised our client to pay the cost of the product in the form of Current Dated Cheque as mentioned in the purchase order.
+  </p>
+
+  <p>
+    That our client had relied on your promise and as instructed by you delivered the <%= deliveryProduct %> at your office at <%= deliveryOffice %> vide Invoice No. <%= invoiceNo %> dated <%= invoiceDate %>.
+  </p>
+
+  <p>
+    That you have issued Cheque No. <%= chequeNo %> dated <%= chequeDate %> for Rs. <%= chequeAmount %>/- (Rupees <%= chequeAmountWords %> only) drawn <%= chequeBank %> towards payment against the Invoice.
+  </p>
+
+  <p>
+    That the aforesaid cheques No. <%= chequeNo %> dated <%= chequeDate %> for Rs. <%= chequeAmount %>/- was presented by our client M/s. <%= clientName %> on <%= chequePresentedDate %> to your bankers i.e. <%= clientBank %>.
+  </p>
+
+  <p>
+    That to our clients' shock and surprise the said cheque had been dishonored by your bankers with the reason “Fund Insufficient” which was intimated to our client by their <%= clientContactPerson %> through their cheque return memo dated <%= chequeReturnMemoDate %>.
+  </p>
+
+  <p>
+    That thereafter in spite of many telephonic reminders by my client, you failed to make the payment due to my client.
+  </p>
+
+  <p>
+    That it is now clear that you had the dishonest intention at the time of purchasing <%= dishonestProduct %> from my client and deceived my client to the tune of <%= dishonestAmount %>.
+  </p>
+
+  <p>
+    My client states that you have issued the above said cheques only with an intention to cheat our client which amounts to an offence punishable under section 138 of Negotiable Instruments Act.
+  </p>
+
+  <p>
+    Under the circumstances, we call upon you to pay of Rs. <%= demandAmount %> within a period of 15 (fifteen) days from the date of receipt of this notice, failing which our client will be constrained to take legal action against you in a court of law for an offence punishable under section 138 of Negotiable Instruments Act for which you will be liable for all costs and consequences.
+  </p>
+
+  <p>
+    This is without prejudice to all other legal rights and remedies available to our client for the above-stated purpose.
+  </p>
+
+  <p>
+    You are liable to pay a sum of Rs. <%= noticeCost %>/- as necessary cost and expenses of sending the present legal notice to you.
+  </p>
+
+  <p>
+    Copy of this legal notice is also kept at my office for further ready reference if required in the future.
+  </p>
+
+  <br><br>
+  <p>Yours faithfully,</p>
+  <p>Signature</p>
+  <p>(<%= advocateSignature %>)</p>
+
+</body>
+</html>

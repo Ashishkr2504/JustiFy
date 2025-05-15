@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Money Bond</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>DRAFT OF SIMPLE MONEY BOND</h2>
+
+  <p>
+    I, <%= debtorName %>, son of <%= debtorFatherName %> resident of <%= debtorAddress %> confirm that I am indebted to <%= creditorName %> son of <%= creditorFatherName %> resident of <%= creditorAddress %> to the extent of Rs. <%= amount %> (Rupees <%= amountWords %>) on account of the price of <%= itemPurchased %> purchased by me from the said <%= creditorName %> and I hereby agree and covenant to pay the said sum on demand of Rs. <%= amountRepeat %> with interest at the rate of <%= interestRate %> percent per annum to <%= creditorName %>.
+  </p>
+
+  <p>Date: <%= date %></p>
+
+  <p>WITNESSES</p>
+  <ol>
+    <li><%= witness1 %></li>
+    <li><%= witness2 %></li>
+  </ol>
+
+  <br>
+  <p>Signature: <%= debtorSignature %></p>
+
+</body>
+</html>

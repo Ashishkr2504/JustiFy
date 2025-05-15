@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Security Bond for Grant of Succession Certificate</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Security Bond for Grant of Succession Certificate<br>(Section 375, Indian Succession Act, 1925)</h2>
+
+  <p>
+    Know All Men that we, <%= principalName %>, s/o <%= principalFatherName %> r/o <%= principalAddress %> and Mr. <%= suretyName %>, s/o <%= suretyFatherName %> r/o <%= suretyAddress %> (Surety for Mr. <%= principalName %>) bind ourselves jointly and severally to Shri <%= judgeName %>, Distt. Judge, <%= judgeDistrict %> for payment to him or his successor in office of the sum of Rs. <%= bondAmount %>.
+  </p>
+
+  <p>
+    We have signed this bond on this <%= bondDateDay %> day of <%= bondDateMonth %>, <%= bondDateYear %> at <%= bondPlace %>.
+  </p>
+
+  <p>
+    Signature: <%= adminSignature %><br>
+    Administration
+  </p>
+  <p>
+    Signature: <%= suretySignature %><br>
+    Surety
+  </p>
+
+  <p>
+    WHEREAS, the Court of the said District Judge, Mr. <%= judgeName %>, has passed the order on the day of <%= orderDate %> and has granted the succession certificates in favour of the said Mr. <%= principalName %> to the estate of Late <%= deceasedName %> deceased on the condition that said Mr. <%= principalName %> execute a bond with one surety of Rs. <%= successionAmount %>.
+  </p>
+
+  <p>
+    AND WHEREAS, the said Mr. <%= principalName %> has agreed to execute the bond for the said Rs. <%= successionAmount %> and the said Mr. <%= suretyName %> has agreed to enter into the above bond as surety for said Mr. <%= principalName %>.
+  </p>
+
+  <p><strong>NOW, This Bond Witnesses As Under:</strong></p>
+  <ol>
+    <li>That the said Mr. <%= principalName %> shall prepare an inventory of the property of the deceased within six months from the date of the execution of the bond.</li>
+    <li>That the accounts of the debtor and creditor shall also be prepared by the said Mr. <%= principalName %>.</li>
+    <li>That the said Mr. <%= principalName %> shall indemnify the person who may be entitled to the whole or any part of such debts.</li>
+    <li>That if the above condition is satisfied then the bond shall remain in force, otherwise the bond shall be void.</li>
+  </ol>
+
+  <p>
+    We the above mentioned parties have signed this bond on this <%= bondDateDay %> day of <%= bondDateMonth %>, <%= bondDateYear %> after fully understanding the contents of this bond in the presence of the following witnesses.
+  </p>
+
+  <p><strong>WITNESSES:</strong></p>
+  <ol>
+    <li>
+      Name: <%= witness1Name %><br>
+      Address: <%= witness1Address %><br>
+      Signature: <%= witness1Signature %> (Successor)
+    </li>
+    <li>
+      Name: <%= witness2Name %><br>
+      Address: <%= witness2Address %><br>
+      Signature: <%= witness2Signature %> (Surety)
+    </li>
+  </ol>
+
+</body>
+</html>

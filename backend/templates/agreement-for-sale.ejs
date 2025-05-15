@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Agreement for Sale</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>DRAFT OF AGREEMENT FOR SALE</h2>
+  <p>
+    THIS AGREEMENT FOR SALE is made and executed on this the <%= agreementDay %> day <%= agreementMonth %> of <%= agreementYear %>
+  </p>
+  <p>
+    BETWEEN<br>
+    Mr. <%= sellerName %> s/o. <%= sellerFather %> aged <%= sellerAge %> years residing at <%= sellerAddress %> (hereinafter called "The SELLER", which expression shall mean and include her legal heirs, successors, successors-in-interest, executors, administrators, legal representatives, attorneys and assigns) of ONE PART.<br><br>
+    AND<br>
+    Mr. <%= purchaserName %> s/o. <%= purchaserFather %> aged <%= purchaserAge %> years residing at <%= purchaserAddress %> (hereinafter referred as "The PURCHASER" (represented by his power of attorney) which expression shall mean and include his heirs, successors, executors, administrators, legal representatives, attorneys and assigns of the OTHER PART.
+  </p>
+  <p>
+    WHEREAS THE SELLER is the absolute owner in possession and enjoyment of the more fully described in the schedule hereunder and hereafter called the "SCHEDULE PROPERTY".
+  </p>
+  <p>
+    WHEREAS the property more fully described in the schedule hereunder is the self acquired property of the SELLER who purchased the same from Mr. <%= sellerPurchasedFrom %> in and by sale deed dated <%= sellerPurchaseDeedDate %> and registered as Doct No. <%= sellerPurchaseDocNo %> of Book 1 Volume No <%= sellerPurchaseBook %>, registered on <%= sellerPurchaseRegDate %> and filed on the file of the Sub-Registrar,
+  </p>
+  <p>
+    WHEREAS the SELLER is the absolute owner of the property and he has been enjoying the same with absolute right and he has clear and marketable title to the Schedule Property.
+  </p>
+  <p>
+    WHEREAS the SELLER being in need of funds for the purpose of <%= purposeOfSale %> has decided to sell the property more fully described in the Schedule hereunder and the PURCHASER has offered to purchase the same.
+  </p>
+  <p>
+    WHEREAS the SELLER offered to sell and transfer the schedule property to the PURCHASER for a sale consideration of Rs. <%= saleConsideration %> (Rupees <%= saleConsiderationWords %> only) and the PURCHASER herein has agreed to purchase the same for the aforesaid consideration on the following terms and conditions:
+  </p>
+  <p>
+    NOW THIS AGREEMENT WITNESSETH AS FOLLOWS:
+  </p>
+  <ol>
+    <li>
+      The Sale consideration of the Schedule Property is fixed at Rs. <%= saleConsideration %> (Rupees <%= saleConsiderationWords %> only).
+    </li>
+    <li>
+      The PURCHASER has paid a sum of Rs. <%= advanceAmount %> (Rupees <%= advanceAmountWords %> only) by <%= advancePaymentMode %> bearing No <%= advanceChequeNo %> drawn on <%= advanceChequeBank %> dated <%= advanceChequeDate %> as advance, the receipt of which sum the SELLER hereby acknowledges.
+    </li>
+    <li>
+      The balance payment of Rs. <%= balanceAmount %> (Rupees <%= balanceAmountWords %> only) will be paid by the PURCHASER to the SELLER at the time of execution of the absolute Sale Deed and thus completing the Sale transaction.
+    </li>
+    <li>
+      The parties herein covenant to complete the Sale transaction and to execute the Absolute Sale Deed by the end of <%= saleDeedExecutionDeadline %>.
+    </li>
+    <li>
+      The SELLER confirms with the PURCHASER that he/she has not entered into any agreement for sale, mortgage or exchange whatsoever with any other person relating to the Schedule Property of this Agreement.
+    </li>
+    <li>
+      The SELLER hereby assures the PURCHASER and he/she has absolute power to convey the same and there are no encumbrances, liens, charges, Government dues, attachments, acquisition, or requisition, proceedings etc.
+    </li>
+    <li>
+      The SELLER agrees to put the PURCHASER in absolute and vacant possession of the schedule property after executing the sale deed and registering the same in the jurisdictional Sub-Registrar's office.
+    </li>
+    <li>
+      The SELLER covenants with the PURCHASER that he/she shall not do any act, deed or thing creating any charge, lien or encumbrance in respect of the schedule property during the subsistence of this Agreement.
+    </li>
+    <li>
+      The SELLER has specifically agreed and covenants with the PURCHASER that he/she shall do all acts, deeds and things which are necessary and requisite to convey absolute and marketable title in respect of the schedule property in favour of the PURCHASER or his nominee.
+    </li>
+    <li>
+      IT IS AGREED between the parties that all expenses towards Stamp Duty and Registration charges shall be borne by the <%= stampDutyParty %> and <%= registrationParty %> only.
+    </li>
+    <li>
+      The PURCHASER shall have the right to nominate or assign his right under this agreement to any person or persons of his choice and the SELLER shall execute the Sale Deed as per terms and conditions of this Agreement in favour of the PURCHASER or his nominee or assignee.
+    </li>
+    <li>
+      The SELLER has agreed to get consent deed duly executed to this Sale transaction from his <%= sellerConsentFamily %> on or before date of registration of Sale Deed and assured that they all join to execute sale deed in favour of the purchaser.
+    </li>
+    <li>
+      It is hereby expressly provided and agreed by the parties here to that both parties are entitled to enforce specific performance of the agreement against each other in case of breach of any conditions mentioned in this Agreement.
+    </li>
+    <li>
+      The original of the "AGREEMENT" signed by both the parties shall be with the PURCHASER and copy of the same similarly signed shall be with the SELLER.
+    </li>
+  </ol>
+  <p>
+    SCHEDULE:<br>
+    <%= scheduleProperty %>
+  </p>
+  <p>
+    IN WITNESS WHEREOF the SELLER and the PURCHASER have signed this Agreement of Sale on the day month and year herein above mentioned in the presence of the witnesses:
+  </p>
+  <p>
+    WITNESSES:<br>
+    1. <%= witness1 %><br>
+    2. <%= witness2 %>
+  </p>
+  <p>
+    Signed by SELLER: <%= sellerName %><br>
+    In presence of<br>
+    Signed by PURCHASER: <%= purchaserName %><br>
+    In presence of
+  </p>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Draft of Loan Agreement</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>DRAFT OF LOAN AGREEMENT</h2>
+
+  <p>LOAN AGREEMENT BETWEEN</p>
+  <p><strong><%= lenderName %></strong></p>
+  <p>AND <strong><%= borrowerName %></strong></p>
+
+  <p>
+    THIS AGREEMENT made and entered into at <%= place %> this <%= day %> day of <%= month %>, <%= year %> BETWEEN <%= lenderName %> hereinafter called "the Lender" AND <%= borrowerName %> hereinafter called "the Borrower" and reference to the parties hereto shall mean and include their respective heirs, executors, administrators and assigns;
+  </p>
+
+  <p>
+    WHEREAS the Borrower is in need of funds and hence has approached the Lender to grant her an interest-free loan of Rs.<%= loanAmount %>/- (Rupees <%= loanAmountWords %> only) for a period of <%= loanYears %> years;
+  </p>
+
+  <p>
+    AND WHEREAS the Lender has agreed to grant a loan to the Borrower, free of interest, as the Lender and the Borrower have known each other since several years;
+  </p>
+
+  <p>
+    AND WHEREAS the parties hereto are desirous of recording the terms and conditions of this loan in writing;
+  </p>
+
+  <p>
+    NOW THIS AGREEMENT WITNESSETH and it is hereby agreed by and between the parties hereto as under:-
+  </p>
+
+  <ol>
+    <li>
+      The Borrower hereto, being in need of money, has requested the Lender to give her an interest-free loan of Rs.<%= loanAmountRepeat %>/- (Rupees <%= loanAmountWordsRepeat %> only) to enable her to purchase a residential flat, to which the Lender has agreed.
+    </li>
+    <li>
+      The said loan is required by the Borrower for a period of <%= loanYearsRepeat %> years, commencing from <%= loanStartDate %> and terminating on <%= loanEndDate %>.
+    </li>
+    <li>
+      The Borrower hereby agrees and undertakes to return the loan of Rs.<%= loanAmountRepeat %>/- (Rupees <%= loanAmountWordsRepeat %> only), in instalments, within the aforesaid period of <%= loanYearsRepeat %> years and gives her personal guarantee for the same.
+    </li>
+    <li>
+      The terms and conditions of this Agreement are arrived at by the mutual consent of the parties hereto.
+    </li>
+  </ol>
+
+  <p>
+    IN WITNESS WHEREOF the parties hereto have hereunto set and subscribed their respective hands the day and year first hereinabove written.
+  </p>
+
+  <p>SIGNED AND DELIVERED by the Within-named Lender in the presence of <%= lenderWitness %></p>
+  <p>SIGNED AND DELIVERED by the Within-named Borrower in the presence of <%= borrowerWitness %></p>
+
+</body>
+</html>

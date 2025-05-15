@@ -16,6 +16,8 @@ import DocumentAnalyzer from './dashboard/DocumentAnalyzer'
 import DocumentSearch from './dashboard/DocumentSearch'
 import CaseTracker from './dashboard/CaseTracker'
 import LocationServices from './dashboard/LocationServices'
+import TemplateForm from './dashboard/TemplateForm'
+
 import './index.css'
 
 declare namespace JSX {
@@ -41,15 +43,19 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
+            <Route path="/legal-templates" element={<LegalTemplates />} />
+              <Route path="/legal-templates/:type" element={<TemplateForm />} />
+            {/* <Route path="/dashboard/document-search" element={<DocumentSearch />} /> */}
             <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}>
               {/* Default route for Dashboard */}
               <Route index element={<Navigate to="/dashboard/chatbot" replace />} />
               <Route path="chatbot" element={<Chatbot />} />
               <Route path="templates" element={<LegalTemplates />} />
               <Route path="analyzer" element={<DocumentAnalyzer />} />
-              <Route path="search" element={<DocumentSearch />} />
+               <Route path="search" element={<DocumentSearch />} />
               <Route path="tracker" element={<CaseTracker />} />
               <Route path="location" element={<LocationServices />} />
+              
             </Route>
             <Route
               path="*"

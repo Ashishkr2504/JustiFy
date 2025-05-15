@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Bond of Non-Compete</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: #333;
+      font-size: large;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 40px;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    strong {
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>DRAFT OF EMPLOYEE BOND OF NON-COMPETE</h2>
+
+  <p>
+    By this Bond Mr. <%= employeeName %> residing at <%= employeeAddress %> binds himself to pay to Mr. <%= employerName %> the sum of Rs. <%= bondAmount %> as liquidated damages.
+  </p>
+
+  <p>
+    WHEREAS <%= employeeName %> is a qualified <%= employeeQualification %> employed by <%= employerName %> in his factory manufacturing some <%= factoryProduct %> viz. ………........ and in the course of employment Mr. <%= employeeName %> may come to know the secret <%= secretType %> adopted by <%= employerName %> in the manufacture of such products.
+  </p>
+
+  <p>
+    AND WHEREAS as per the terms of employment <%= employeeName %> has promised to <%= employerName %> not to misuse his position by disclosing to any person the knowledge acquired by him in the manufacture of the said products and has agreed to execute this Bond.
+  </p>
+
+  <p>
+    AND WHEREAS however, in the event of <%= employeeName %> misusing his position as herein stated, he has at the request of <%= employerName %> agreed and hereby agrees to make good the loss by paying him the said <%= employerName %> a sum of Rs <%= compensationAmount %> as compensation.
+  </p>
+
+  <p>
+    NOW the condition of this bond is that if during the course of employment of Mr. <%= employeeName %> with Mr. <%= employerName %>, the said <%= employeeName %> will work faithfully and honestly and shall not disclose to any person the knowledge he may get regarding the manufacture of the said products and the formulae or manufacturing process thereof and shall not, after he ceases to be the employee of Mr. <%= employerName %> due to his resignation or dismissal or removal or for any reason whatsoever, carry on any business similar to the business of manufacturing the said products or medicines or work with any other manufacturer carrying on similar business, either as an employee or on ad hoc basis or partially or otherwise directly or indirectly within the city of <%= city %> and for a period of <%= nonCompeteYears %> years from the time he ceases to be in the service of the said <%= employerName %> then this Bond will become void and of no effect but otherwise it will remain in full force and effect.
+  </p>
+
+  <p>
+    In WITNESS, WHEREOF the said Mr. <%= employeeName %> has put his hand this day <%= bondDate %>
+  </p>
+
+  <p>
+    Signed and delivered by the within named Mr. <%= employeeName %>
+  </p>
+
+  <p>WITNESSES:</p>
+  <ol>
+    <li><%= witness1 %></li>
+    <li><%= witness2 %></li>
+  </ol>
+
+</body>
+</html>
