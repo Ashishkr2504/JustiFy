@@ -4,6 +4,44 @@ import { SendHorizonal, UserRound, Bot, Scale, Target, ListCheck,  ChevronDown ,
 import { getChatbotResponse } from '../services/chatbot.api';
 import { useChat } from '../context/ChatContext';
 
+function TypewriterHeading({
+  text,
+  speed = 50,
+  pause = 1200,
+}: {
+  text: string;
+  speed?: number;
+  pause?: number;
+}) {
+  const [displayed, setDisplayed] = useState('');
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (index < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayed((prev) => prev + text[index]);
+        setIndex((i) => i + 1);
+      }, speed);
+      return () => clearTimeout(timeout);
+    } else {
+      const timeout = setTimeout(() => {
+        setDisplayed('');
+        setIndex(0);
+      }, pause);
+      return () => clearTimeout(timeout);
+    }
+  }, [index, text, speed, pause]);
+
+  return (
+   <h2
+  className="text-3xl md:text-3xl text-center font-bold tracking-tight bg-gradient-to-r from-[#14532D] to-lime-600 bg-clip-text text-transparent drop-shadow-lg min-h-[2.5em]"
+>
+  {displayed}
+  <span className="animate-pulse text-lime-700">|</span>
+</h2>
+  );
+}
+
 const SkeletonSection = ({ width = "100%", height = "1.2em", className = "" }) => (
   <div
     className={`bg-gray-200 rounded animate-pulse mb-2 ${className}`}
@@ -93,9 +131,7 @@ const Chatbot = () => {
         transition={{ duration: 0.5 }}
       >
         <div className="relative mb-6">
-          <h2 className="text-2xl text-center font-bold text-[#2E2E2E]">
-            What can I help with?
-          </h2>
+          <TypewriterHeading text="What can I help with?" />
           <button
             className="absolute top-0 right-0 bg-green-200 hover:bg-green-300 text-gray-700 p-1 rounded-full shadow transition ml-6"
             onClick={() => chatBottomRef.current?.scrollIntoView({ behavior: 'smooth' })}
