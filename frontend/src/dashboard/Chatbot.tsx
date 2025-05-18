@@ -3,6 +3,27 @@ import { motion } from 'framer-motion';
 import { SendHorizonal, UserRound, Bot, Scale, Target, ListCheck,  ChevronDown ,ChevronUp } from 'lucide-react';
 import { getChatbotResponse } from '../services/chatbot.api';
 import { useChat } from '../context/ChatContext';
+import VoiceInput from "../components/VoiceInput";
+import { geminiTranslate } from "../utils/geminiTranslate";
+
+// Simple Hindi detection (checks for Devanagari script)
+function isHindi(text: string) {
+  return /[\u0900-\u097F]/.test(text);
+}
+
+// const handleVoiceResult = async (text: string) => {
+//   if (isHindi(text)) {
+//     setQuery("Translating...");
+//     try {
+//       const english = await geminiTranslate(text);
+//       setQuery(english);
+//     } catch {
+//       setQuery("Translation failed.");
+//     }
+//   } else {
+//     setQuery(text);
+//   }
+// };
 
 function TypewriterHeading({
   text,
@@ -75,6 +96,20 @@ const Chatbot = () => {
   const chatBottomRef = useRef<HTMLDivElement | null>(null);
   const pageTopRef = useRef<HTMLDivElement | null>(null);
 
+
+const handleVoiceResult = async (text: string) => {
+  if (isHindi(text)) {
+    setQuery("Translating...");
+    try {
+      const english = await geminiTranslate(text);
+      setQuery(english);
+    } catch {
+      setQuery("Translation failed.");
+    }
+  } else {
+    setQuery(text);
+  }
+};
 
   const handleSend = async () => {
     if (!query.trim() || isLoading) return;
@@ -315,6 +350,7 @@ const Chatbot = () => {
             disabled={isLoading}
             aria-label="Enter your legal query"
           />
+          <VoiceInput onResult={handleVoiceResult} lang="hi-IN" />
           <button
             aria-label="Send query"
             onClick={handleSend}

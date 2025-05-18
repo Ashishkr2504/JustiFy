@@ -18,6 +18,7 @@ import CaseTracker from './dashboard/CaseTracker'
 import LocationServices from './dashboard/LocationServices'
 import TemplateForm from './dashboard/TemplateForm'
 import { ChatProvider } from './context/ChatContext';
+// import LanguageToggle from "./components/LanguageToggle";
 
 import './index.css'
 
@@ -73,6 +74,7 @@ const App = () => {
           </Routes>
         </main>
         <Footer />
+        {/* <LanguageToggle /> */}
       </div>
     </Router>
   )

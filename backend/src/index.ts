@@ -11,6 +11,7 @@ import templateRoutes from './routes/template.routes';
 import documentAnalyzerRoutes from './routes/documentAnalyzer.route';
 import documentSearchRoutes from './routes/documentSearch.route';
 import caseTrackerRoute from "./routes/caseTrackerRoute";
+import translateRoute from './routes/translate.route';
 
 
 // import locationRoutes from './routes/location.routes';
@@ -30,6 +31,7 @@ app.use('/api/templates', templateRoutes);
 app.use('/api/document', documentAnalyzerRoutes);
 app.use('/api/document', documentSearchRoutes);
 app.use("/api/casetracker", caseTrackerRoute);
+app.use('/api/translate', translateRoute);
 
 // app.use('/api/location', locationRoutes);
 
