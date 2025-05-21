@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from semantic_search import semantic_search  # Import your function
 import logging
+import os
 
 # If you use MongoDB ObjectId in your results, import ObjectId
 try:
@@ -37,4 +38,6 @@ def search():
         app.logger.error(f"Error in /search: {e}")
         return jsonify({'error': 'Internal server error'}), 500
 
-# No need for if __name__ == '__main__' block in production
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))  # Render sets PORT env var
+    app.run(host="0.0.0.0", port=port)
