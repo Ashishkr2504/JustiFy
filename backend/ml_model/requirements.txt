@@ -6,3 +6,7 @@ pandas
 flask
 transformers
 torch
+pymongo
+python-dotenv
+google-generativeai
+certifi
