@@ -1,23 +1,67 @@
 import { Request, Response } from "express";
 import puppeteer from "puppeteer";
+import { v4 as uuidv4 } from "uuid";
 
-let captchaPage: puppeteer.Page | null = null;
+// Map sessionId -> Puppeteer page
+const captchaSessions: Record<string, puppeteer.Page> = {};
 
+// GET /api/casetracker/captcha
+export const getCaptchaImage = async (req: Request, res: Response) => {
+  try {
+    const browser = await puppeteer.launch({
+      headless: "new",
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
+    const page = await browser.newPage();
+    await page.goto("https://services.ecourts.gov.in/ecourtindia_v6/");
+    await page.screenshot({ path: "before_typing.png" });
+
+    // Wait for the page to load
+    await new Promise(res => setTimeout(res, 2000));
+
+    // Try to close any modal/popups if present
+    try {
+      await page.click('.btn-close, .close, .modal-footer .btn-primary', { timeout: 3000 });
+    } catch (e) {
+      // Ignore if not present
+    }
+
+    // Now wait for the captcha image
+    await page.waitForSelector("#captcha_image", { timeout: 20000 });
+
+    // Get captcha image as base64
+    const captchaSrc = await page.$eval("#captcha_image", (img: any) => img.src);
+    const captchaUrl = new URL(captchaSrc, "https://services.ecourts.gov.in/ecourtindia_v6/").href;
+    const viewSource = await page.goto(captchaUrl);
+    const buffer = await viewSource!.buffer();
+    const base64 = buffer.toString("base64");
+
+    // Generate a session ID and store the page
+    const sessionId = uuidv4();
+    captchaSessions[sessionId] = page;
+
+    res.json({ image: `data:image/png;base64,${base64}`, sessionId });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Failed to fetch captcha." });
+  }
+};
+
+// POST /api/casetracker
 export const trackCaseByCnr = async (req: Request, res: Response) => {
-  const { cnr, captcha } = req.body;
+  const { cnr, captcha, sessionId } = req.body;
   if (!cnr || cnr.length !== 16) {
     return res.status(400).json({ error: "Invalid CNR number." });
   }
   if (!captcha) {
     return res.status(400).json({ error: "Captcha is required." });
   }
+  if (!sessionId || !captchaSessions[sessionId]) {
+    return res.status(400).json({ error: "Captcha session expired. Please refresh captcha." });
+  }
 
+  const page = captchaSessions[sessionId];
   try {
-    let page = captchaPage;
-    if (!page) {
-      return res.status(400).json({ error: "Captcha session expired. Please refresh captcha." });
-    }
-
     await page.type("#cino", cnr);
     await page.type("#fcaptcha_code", captcha);
 
@@ -42,59 +86,13 @@ export const trackCaseByCnr = async (req: Request, res: Response) => {
       };
     });
 
-    await page.screenshot({ path: "captcha_debug.png" });
-
     await page.browser().close();
-    captchaPage = null;
+    delete captchaSessions[sessionId];
     res.json(details);
   } catch (error) {
     console.error(error);
-    if (captchaPage) {
-      await captchaPage.browser().close();
-      captchaPage = null;
-    }
+    await page.browser().close();
+    delete captchaSessions[sessionId];
     res.status(500).json({ error: "Failed to fetch case details. Please check the CNR number and captcha, then try again." });
-  }
-};
-
-export const getCaptchaImage = async (req: Request, res: Response) => {
-  try {
-    const browser = await puppeteer.launch({
-      headless: "new",
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
-    const page = await browser.newPage();
-    await page.goto("https://services.ecourts.gov.in/ecourtindia_v6/");
-
-    // Wait for the page to load
-    await new Promise(res => setTimeout(res, 2000));
-
-    // Try to close any modal/popups if present
-    try {
-      await page.click('.btn-close, .close, .modal-footer .btn-primary', { timeout: 3000 });
-    } catch (e) {
-      // Ignore if not present
-    }
-
-    // Take a screenshot BEFORE waiting for the captcha selector
-    await page.screenshot({ path: "captcha_debug.png" });
-
-    // Now wait for the captcha image
-    await page.waitForSelector("#captcha_image", { timeout: 20000 });
-
-    // Get captcha image as base64
-    const captchaSrc = await page.$eval("#captcha_image", (img: any) => img.src);
-    const captchaUrl = new URL(captchaSrc, "https://services.ecourts.gov.in/ecourtindia_v6/").href;
-    const viewSource = await page.goto(captchaUrl);
-    const buffer = await viewSource!.buffer();
-    const base64 = buffer.toString("base64");
-
-    // Save the page for later use
-    captchaPage = page;
-
-    res.json({ image: `data:image/png;base64,${base64}` });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Failed to fetch captcha." });
   }
 };

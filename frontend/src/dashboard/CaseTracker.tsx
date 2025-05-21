@@ -5,6 +5,7 @@ const CaseTracker = () => {
   const [cnr, setCnr] = useState("");
   const [captcha, setCaptcha] = useState("");
   const [captchaImg, setCaptchaImg] = useState<string | null>(null);
+  const [sessionId, setSessionId] = useState<string | null>(null);
   const [result, setResult] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -15,8 +16,9 @@ const CaseTracker = () => {
     setError("");
     setResult(null);
     try {
-      const { data } = await axios.get(`/api/casetracker/captcha?ts=${Date.now()}`);
+      const { data } = await axios.get(`http://localhost:5000/api/casetracker/captcha?ts=${Date.now()}`);
       setCaptchaImg(data.image);
+      setSessionId(data.sessionId); // Store session ID
     } catch {
       setError("Failed to load captcha. Try again.");
     }
@@ -28,21 +30,26 @@ const CaseTracker = () => {
     setResult(null);
     setLoading(true);
     try {
-      const { data } = await axios.post("/api/casetracker", { cnr, captcha });
+      const { data } = await axios.post("http://localhost:5000/api/casetracker", {
+        cnr,
+        captcha,
+        sessionId, // Send session ID
+      });
       setResult(data);
     } catch (err: any) {
-      setError(err?.response?.data?.error || "Something went wrong.");
+      setError(err.response?.data?.error || "Failed to fetch case details.");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
     <div className="p-6 max-w-xl mx-auto">
-      <h2 className="text-xl font-semibold mb-4">Track Case by CNR Number</h2>
+      <h2 className="text-2xl font-bold mb-4">Case Tracker</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
-          placeholder="Enter CNR Number (e.g. MHAU019999992015)"
+          placeholder="Enter 16-digit CNR Number"
           value={cnr}
           onChange={(e) => setCnr(e.target.value)}
           required
@@ -50,15 +57,17 @@ const CaseTracker = () => {
         />
         <button
           type="button"
-          className="bg-blue-600 text-white px-4 py-2 rounded"
           onClick={fetchCaptcha}
           disabled={!cnr}
+          className="bg-blue-600 text-white px-4 py-2 rounded"
         >
           {captchaImg ? "Reload Captcha" : "Get Captcha"}
         </button>
         {captchaImg && (
+          <img src={captchaImg} alt="Captcha" className="my-2 border" />
+        )}
+        {captchaImg && (
           <div>
-            <img src={captchaImg} alt="Captcha" className="my-2 border" />
             <input
               type="text"
               placeholder="Enter Captcha"
@@ -79,11 +88,12 @@ const CaseTracker = () => {
       </form>
       {error && <div className="text-red-600 mt-4">{error}</div>}
       {result && (
-        <div className="mt-6 bg-gray-50 p-4 rounded shadow">
-          <div><b>Case Title:</b> {result.title}</div>
-          <div><b>Case Type:</b> {result.caseType}</div>
-          <div><b>Filing Date:</b> {result.filingDate}</div>
-          <div><b>Next Hearing Date:</b> {result.hearingDate}</div>
+        <div className="mt-6 bg-gray-100 p-4 rounded">
+          <h3 className="font-bold mb-2">Case Details</h3>
+          <div><strong>Title:</strong> {result.title}</div>
+          <div><strong>Type:</strong> {result.caseType}</div>
+          <div><strong>Filing Date:</strong> {result.filingDate}</div>
+          <div><strong>Hearing Date:</strong> {result.hearingDate}</div>
         </div>
       )}
     </div>

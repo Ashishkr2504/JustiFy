@@ -13,12 +13,17 @@ import certifi
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 # Load environment variables
+# print("Loading environment variables...")
 load_dotenv()
+
+# print("Connecting to MongoDB...")
 mongo_uri = os.environ.get("MONGODB_URI")
 genai.configure(api_key=os.environ.get("gemapi"))
 
 # Load embedding model for semantic search
+# print("Loading embedding model...")
 embedding_model = SentenceTransformer("BAAI/bge-small-en")
+# print("Connected and model loaded.")
 
 # Connect to MongoDB Atlas
 client = MongoClient(mongo_uri, tls=True, tlsCAFile=certifi.where())

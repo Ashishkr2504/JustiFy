@@ -10,7 +10,7 @@ import blogRoutes from './routes/blog.routes';
 import templateRoutes from './routes/template.routes';
 import documentAnalyzerRoutes from './routes/documentAnalyzer.route';
 import documentSearchRoutes from './routes/documentSearch.route';
-import caseTrackerRoute from "./routes/caseTrackerRoute";
+import caseTrackerRoute from "./routes/caseTracker.route";
 import translateRoute from './routes/translate.route';
 
 

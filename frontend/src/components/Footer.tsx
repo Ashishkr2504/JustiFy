@@ -16,6 +16,8 @@ const Footer = () => {
           <p className="text-sm text-[#FFFAF0]/80 leading-relaxed">
             Your AI-powered legal assistant — simplifying law, automating documents, and guiding you with confidence.
           </p>
+
+
         </div>
 
         {/* Help Center */}
