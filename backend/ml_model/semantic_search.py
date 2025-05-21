@@ -23,7 +23,7 @@ genai.configure(api_key=os.environ.get("gemapi"))
 # Load embedding model for semantic search
 # print("Loading embedding model...")
 # embedding_model = SentenceTransformer("BAAI/bge-small-en")
-embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+embedding_model = SentenceTransformer("paraphrase-MiniLM-L3-v2")
 # print("Connected and model loaded.")
 
 # Connect to MongoDB Atlas
@@ -46,7 +46,8 @@ def semantic_search(query, top_k=3):  # Changed top_k default to 3
     query_vec = embedding_model.encode([apply_instruction(query)])
     query_vec = query_vec / np.linalg.norm(query_vec)
 
-    docs = list(collection.find({}))
+    # docs = list(collection.find({}))
+    docs = list(collection.find({}).limit(100))
     doc_embeddings = np.array([doc["embedding"] for doc in docs])
     similarities = cosine_similarity(query_vec, doc_embeddings)[0]
 

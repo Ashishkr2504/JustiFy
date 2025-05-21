@@ -1,13 +1,9 @@
-faiss-cpu
+flask
 sentence-transformers
 scikit-learn
 numpy
-pandas
-flask
-transformers
-torch
 pymongo
 python-dotenv
 google-generativeai
 certifi
-hf_xet
+pandas
