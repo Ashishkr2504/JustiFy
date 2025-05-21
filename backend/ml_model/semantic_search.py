@@ -22,7 +22,8 @@ genai.configure(api_key=os.environ.get("gemapi"))
 
 # Load embedding model for semantic search
 # print("Loading embedding model...")
-embedding_model = SentenceTransformer("BAAI/bge-small-en")
+# embedding_model = SentenceTransformer("BAAI/bge-small-en")
+embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 # print("Connected and model loaded.")
 
 # Connect to MongoDB Atlas
