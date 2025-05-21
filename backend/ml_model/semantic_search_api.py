@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from .semantic_search import semantic_search  # Import your function
+from semantic_search import semantic_search  # Import your function
 import logging
 
 # If you use MongoDB ObjectId in your results, import ObjectId
