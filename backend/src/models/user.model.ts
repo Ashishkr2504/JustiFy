@@ -22,14 +22,10 @@ const userSchema = new Schema<IUser>({
 });
 
 // Password hashing middleware
-userSchema.pre<IUser>('save', async function (next) {
-  const user = this; // 'this' is now correctly typed as 'IUser'
-  
-  // If the password is not modified, skip the hashing process
+userSchema.pre<IUser>('save', async function (this: IUser, next: (err?: any) => void) {
+  const user = this;
   if (!user.isModified('password')) return next();
- 
   user.password = await bcrypt.hash(user.password, 10);
-
   next();
 });
 
