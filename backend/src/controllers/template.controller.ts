@@ -8,7 +8,7 @@ export const generateTemplate = async (req: Request, res: Response) => {
   const templatePath = path.join(__dirname, '../../templates', `${type}.ejs`);
   try {
     const html = await ejs.renderFile(templatePath, data);
-    pdf.create(html).toBuffer((err, buffer) => {
+    pdf.create(html).toBuffer((err: any, buffer: Buffer) => {
       if (err) return res.status(500).json({ message: 'PDF generation failed' });
       res.set({
         'Content-Type': 'application/pdf',

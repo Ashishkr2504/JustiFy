@@ -9,7 +9,7 @@ const captchaSessions: Record<string, puppeteer.Page> = {};
 export const getCaptchaImage = async (req: Request, res: Response) => {
   try {
     const browser = await puppeteer.launch({
-      headless: "new",
+      headless: true,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const page = await browser.newPage();
@@ -21,7 +21,7 @@ export const getCaptchaImage = async (req: Request, res: Response) => {
 
     // Try to close any modal/popups if present
     try {
-      await page.click('.btn-close, .close, .modal-footer .btn-primary', { timeout: 3000 });
+      await page.click('.btn-close, .close, .modal-footer .btn-primary');
     } catch (e) {
       // Ignore if not present
     }
