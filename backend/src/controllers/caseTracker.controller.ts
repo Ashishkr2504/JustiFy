@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import puppeteer from "puppeteer";
+import puppeteer, { Page } from "puppeteer";
 import { v4 as uuidv4 } from "uuid";
 
 // Map sessionId -> Puppeteer page
-const captchaSessions: Record<string, puppeteer.Page> = {};
+const captchaSessions: Record<string, Page> = {};
 
 // GET /api/casetracker/captcha
 export const getCaptchaImage = async (req: Request, res: Response) => {
