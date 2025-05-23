@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const BLOG_API = 'http://localhost:5000/api/blogs/latest'; // Update this if deployed
+const BLOG_API = import.meta.env.VITE_API_BASE + '/blogs/latest'; // Update this if deployed
 
 export const useBlogs = () => {
   const [blogs, setBlogs] = useState([]);

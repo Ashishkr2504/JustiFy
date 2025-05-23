@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/chatbot'; // Backend API URL
+const API_URL = import.meta.env.VITE_API_BASE + '/chatbot'; // Backend API URL
 
 // Get chatbot response API call
 export const getChatbotResponse = async (query: string) => {

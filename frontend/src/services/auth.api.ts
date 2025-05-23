@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://api.justify.com'; // Replace with your actual API URL
+const API_URL = import.meta.env.VITE_API_BASE + '/auth';
 
 // User login API call
 export const loginUser = async (email: string, password: string) => {

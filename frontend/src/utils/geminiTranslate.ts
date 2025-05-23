@@ -1,5 +1,5 @@
 export async function geminiTranslate(text: string): Promise<string> {
-  const res = await fetch("http://localhost:5000/api/translate", {
+  const res = await fetch(`${import.meta.env.VITE_API_BASE}/translate`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ text }),

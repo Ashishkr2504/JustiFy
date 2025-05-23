@@ -15,7 +15,10 @@ export default function DocumentAnalyzer() {
     formData.append('file', file);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/document/analyze', formData);
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_BASE}/document/analyze`,
+        formData
+      );
       const data = res.data as { analysis: string };
       setResult(data.analysis);
     } catch (err) {

@@ -16,7 +16,7 @@ const CaseTracker = () => {
     setError("");
     setResult(null);
     try {
-      const { data } = await axios.get(`http://localhost:5000/api/casetracker/captcha?ts=${Date.now()}`);
+      const { data } = await axios.get(`${import.meta.env.VITE_API_BASE}/casetracker/captcha?ts=${Date.now()}`);
       setCaptchaImg(data.image);
       setSessionId(data.sessionId); // Store session ID
     } catch {
@@ -30,7 +30,7 @@ const CaseTracker = () => {
     setResult(null);
     setLoading(true);
     try {
-      const { data } = await axios.post("http://localhost:5000/api/casetracker", {
+      const { data } = await axios.post(`${import.meta.env.VITE_API_BASE}/casetracker`, {
         cnr,
         captcha,
         sessionId, // Send session ID

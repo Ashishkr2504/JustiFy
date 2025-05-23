@@ -63,7 +63,7 @@ const RegistrationPage = () => {
 
       // Make API call to backend
       // Frontend
-      const response = await axios.post<RegisterResponse>('http://localhost:5000/api/auth/register', {
+      const response = await axios.post<RegisterResponse>(`${import.meta.env.VITE_API_BASE}/auth/register`, {
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
