@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react'
 import animationData from '../assets/hp-anime.json'

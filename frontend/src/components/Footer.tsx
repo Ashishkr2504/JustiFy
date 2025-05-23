@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Mail, Phone } from 'lucide-react';
 import logo from '../assets/icon_3.jpg';
 const Footer = () => {

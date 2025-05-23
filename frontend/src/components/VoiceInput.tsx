@@ -6,15 +6,19 @@ interface VoiceInputProps {
 }
 
 const VoiceInput: React.FC<VoiceInputProps> = ({ onResult, lang = "en-IN" }) => {
-  const recognitionRef = useRef<SpeechRecognition | null>(null);
+  const recognitionRef = useRef<any>(null);
   const [listening, setListening] = useState(false);
+
+  // @ts-ignore
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  // @ts-ignore
+  type SpeechRecognitionEvent = any;
 
   const startListening = () => {
     if (!("webkitSpeechRecognition" in window || "SpeechRecognition" in window)) {
       alert("Your browser does not support speech recognition.");
       return;
     }
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
     recognition.lang = lang;
     recognition.interimResults = false;

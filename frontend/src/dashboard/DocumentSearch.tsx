@@ -18,7 +18,8 @@ export default function DocumentSearch() {
     setLoading(true);
     try {
       const res = await axios.post('http://localhost:5000/api/document/search', { query, filter });
-      setResults(res.data);
+      const { data } = res;
+      setResults(data as any[]);
     } catch {
       setError('Search failed. Please try again.');
     } finally {
@@ -27,16 +28,16 @@ export default function DocumentSearch() {
   };
 
   // Helper to highlight keywords
-  function highlightKeywords(text: string, query: string) {
-    if (!query) return text;
-    const words = query.split(/\s+/).filter(Boolean);
-    let highlighted = text;
-    words.forEach(word => {
-      const regex = new RegExp(`(${word})`, 'gi');
-      highlighted = highlighted.replace(regex, '<mark>$1</mark>');
-    });
-    return <span dangerouslySetInnerHTML={{ __html: highlighted }} />;
-  }
+  // function highlightKeywords(text: string, query: string) {
+  //   if (!query) return text;
+  //   const words = query.split(/\s+/).filter(Boolean);
+  //   let highlighted = text;
+  //   words.forEach(word => {
+  //     const regex = new RegExp(`(${word})`, 'gi');
+  //     highlighted = highlighted.replace(regex, '<mark>$1</mark>');
+  //   });
+  //   return <span dangerouslySetInnerHTML={{ __html: highlighted }} />;
+  // }
 
   return (
     <div className="p-6 max-w-3xl mx-auto">

@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { motion } from 'framer-motion';
 import { FaShieldAlt, FaBolt, FaGlobe, FaCommentsDollar } from 'react-icons/fa';
 import '@fontsource/playfair-display/400.css'

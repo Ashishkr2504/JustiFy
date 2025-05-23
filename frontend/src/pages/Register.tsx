@@ -5,9 +5,9 @@ import axios from 'axios'; // Import axios for API calls
 import '@fontsource/playfair-display/400.css'
 import '@fontsource/playfair-display/700.css'
 
-interface RegisterResponse {
-  message: string; // Adjust this based on your backend response structure
-}
+// interface RegisterResponse {
+//   message: string; // Adjust this based on your backend response structure
+// }
 
 const RegistrationPage = () => {
   const navigate = useNavigate(); // 👈 initialize navigate
@@ -19,7 +19,7 @@ const RegistrationPage = () => {
   });
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
-  const [registeredUsers, setRegisteredUsers] = useState<string[]>([]);
+  // const [registeredUsers, setRegisteredUsers] = useState<string[]>([]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

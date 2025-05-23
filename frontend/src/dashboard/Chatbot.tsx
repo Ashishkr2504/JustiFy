@@ -92,7 +92,7 @@ const Chatbot = () => {
   const [query, setQuery] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [expandedResults, setExpandedResults] = useState<{ [key: number]: boolean }>({});
-  const chatTopRef = useRef<HTMLDivElement | null>(null);
+  // const chatTopRef = useRef<HTMLDivElement | null>(null);
   const chatBottomRef = useRef<HTMLDivElement | null>(null);
   const pageTopRef = useRef<HTMLDivElement | null>(null);
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '@fontsource/playfair-display/400.css' // Regular weight
 import '@fontsource/playfair-display/700.css' // Bold weight (optional)
 import { motion, AnimatePresence } from 'framer-motion';

@@ -17,8 +17,10 @@ const CaseTracker = () => {
     setResult(null);
     try {
       const { data } = await axios.get(`${import.meta.env.VITE_API_BASE}/casetracker/captcha?ts=${Date.now()}`);
-      setCaptchaImg(data.image);
-      setSessionId(data.sessionId); // Store session ID
+      // Fix: tell TypeScript the type
+      const { image, sessionId } = data as { image: string; sessionId: string };
+      setCaptchaImg(image);
+      setSessionId(sessionId); // Store session ID
     } catch {
       setError("Failed to load captcha. Try again.");
     }
